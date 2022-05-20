@@ -1,0 +1,927 @@
+/**
+ * Checker.java   
+ * Thu 18 Mar 12:53:40 AEDT 2021
+ **/
+
+package VC.Checker;
+
+import VC.ASTs.*;
+import VC.Scanner.SourcePosition;
+import VC.ErrorReporter;
+import VC.StdEnvironment;
+
+public final class Checker implements Visitor {
+
+  private String errMesg[] = {
+    "*0: main function is missing",                            
+    "*1: return type of main is not int",                    
+
+    // defined occurrences of identifiers
+    // for global, local and parameters
+    "*2: identifier redeclared",                             
+    "*3: identifier declared void",                         
+    "*4: identifier declared void[]",                      
+
+    // applied occurrences of identifiers
+    "*5: identifier undeclared",                          
+
+    // assignments
+    "*6: incompatible type for =",                       
+    "*7: invalid value in assignment",                 
+
+     // types for expressions 
+    "*8: incompatible type for return",                
+    "*9: incompatible type for this binary operator", 
+    "*10: incompatible type for this unary operator",
+
+     // scalars
+     "*11: attempt to use an array/function as a scalar", 
+
+     // arrays
+     "*12: attempt to use a scalar/function as an array",
+     "*13: wrong type for element in array initialiser",
+     "*14: invalid initialiser: array initialiser for scalar",   
+     "*15: invalid initialiser: scalar initialiser for array",  
+     "*16: excess elements in array initialiser",              
+     "*17: array subscript is not an integer",                
+     "*18: array size missing",                              
+
+     // functions
+     "*19: attempt to reference a scalar/array as a function",
+
+     // conditional expressions in if, for and while
+    "*20: if conditional is not boolean",                    
+    "*21: for conditional is not boolean",                  
+    "*22: while conditional is not boolean",               
+
+    // break and continue
+    "*23: break must be in a while/for",                  
+    "*24: continue must be in a while/for",              
+
+    // parameters 
+    "*25: too many actual parameters",                  
+    "*26: too few actual parameters",                  
+    "*27: wrong type for actual parameter",           
+
+    // reserved for errors that I may have missed (J. Xue)
+    "*28: misc 1",
+    "*29: misc 2",
+
+    // the following two checks are optional 
+    "*30: statement(s) not reached",     
+    "*31: missing return statement",    
+  };
+
+
+  private SymbolTable idTable;
+  private static SourcePosition dummyPos = new SourcePosition();
+  private ErrorReporter reporter;
+
+  // Checks whether the source program, represented by its AST, 
+  // satisfies the language's scope rules and type rules.
+  // Also decorates the AST as follows:
+  //  (1) Each applied occurrence of an identifier is linked to
+  //      the corresponding declaration of that identifier.
+  //  (2) Each expression and variable is decorated by its type.
+
+  public Checker (ErrorReporter reporter) {
+    this.reporter = reporter;
+    this.idTable = new SymbolTable ();
+    establishStdEnvironment();
+  }
+
+  public void check(AST ast) {
+    ast.visit(this, null);
+  }
+
+
+  // auxiliary methods
+
+  private void declareVariableFromParaListToCompStmt(Ident ident, Decl decl) {
+    idTable.insert(ident.spelling, decl);
+  }
+
+  private void declareVariable(Ident ident, Decl decl) {
+    IdEntry entry = idTable.retrieveOneLevel(ident.spelling);
+
+    if (entry == null) {
+      ; // no problem
+    } else {
+      reporter.reportError(errMesg[2] + ": %", ident.spelling, ident.position);
+    }
+    
+    idTable.insert(ident.spelling, decl);
+  }
+
+
+  // Programs
+
+  public Object visitProgram(Program ast, Object o) {
+    ast.FL.visit(this, null);
+    
+    // test whether there is a main function.
+    Decl main = idTable.retrieve("main");
+    if (main != null && main.isFuncDecl()) {
+      System.out.println("There is a main function");
+    } else {
+      System.out.println("There is NO a main function");
+      // There is no main function, need to report this as an error
+      reporter.reportError(errMesg[0], "", ast.position);
+    }
+    return null;
+  }
+
+  // Statements
+
+  public Object visitCompoundStmt(CompoundStmt ast, Object o) {
+    idTable.openScope();
+    
+    // extract parameters and put them into the symbol table
+    // Object o will only be valid if we came from a FuncDecl AST
+    FuncDecl fd = (FuncDecl) o;
+    if (fd != null) {
+      if (fd.PL instanceof EmptyParaList) {
+    
+      } else {
+         List pl = (ParaList) fd.PL;
+         while (!pl.isEmptyParaList()){
+            ParaDecl pd = ((ParaList) pl).P;
+            declareVariableFromParaListToCompStmt(pd.I, pd);
+            pl = ((ParaList) pl).PL;
+         }
+      }
+    }
+    // Your code goes here
+    ast.DL.visit(this, o);
+    ast.SL.visit(this, o);
+
+    idTable.closeScope();
+    return null;
+  }
+
+  public Object visitStmtList(StmtList ast, Object o) {
+    ast.S.visit(this, o);
+    if (ast.S instanceof ReturnStmt && ast.SL instanceof StmtList) {
+      reporter.reportError(errMesg[30], "", ast.SL.position);
+    }
+    /*
+    if (ast.S instanceof ReturnStmt) {
+      // Check if the return Type is the same as the function Type
+      FuncDecl fd = (FuncDecl) o;
+      Type expectedType = (Type) fd.T;
+      ReturnStmt ret = (ReturnStmt) ast.S;
+      Type returnType = ret.E.type;
+      if (!(expectedType.assignable(returnType))){
+         reporter.reportError(errMesg[8], "", ast.S.position);
+         reporter.reportError("DEBUG: Expected - " + expectedType + " Found - " + returnType, "", ast.S.position);
+      }
+    }*/
+    ast.SL.visit(this, o);
+    return null;
+  }
+
+
+  public Object visitExprStmt(ExprStmt ast, Object o) {
+    ast.E.visit(this, o);
+    return null;
+  }
+
+  public Object visitEmptyStmt(EmptyStmt ast, Object o) {
+    return null;
+  }
+
+  public Object visitEmptyStmtList(EmptyStmtList ast, Object o) {
+    return null;
+  }
+
+  // Expressions
+
+  // Returns the Type denoting the type of the expression. Does
+  // not use the given object.
+
+
+  public Object visitEmptyExpr(EmptyExpr ast, Object o) {
+    ast.type = StdEnvironment.errorType;
+    return ast.type;
+  }
+
+  public Object visitBooleanExpr(BooleanExpr ast, Object o) {
+    ast.type = StdEnvironment.booleanType;
+    return ast.type;
+  }
+
+  public Object visitIntExpr(IntExpr ast, Object o) {
+    ast.type = StdEnvironment.intType;
+    return ast.type;
+  }
+
+  public Object visitFloatExpr(FloatExpr ast, Object o) {
+    ast.type = StdEnvironment.floatType;
+    return ast.type;
+  }
+
+  public Object visitStringExpr(StringExpr ast, Object o) {
+    ast.type = StdEnvironment.stringType;
+    return ast.type;
+  }
+
+  public Object visitVarExpr(VarExpr ast, Object o) {
+    ast.type = (Type) ast.V.visit(this, null);
+    return ast.type;
+  }
+
+
+  // Declarations
+
+  // Always returns null. Does not use the given object.
+
+  public Object visitFuncDecl(FuncDecl ast, Object o) {
+    idTable.insert (ast.I.spelling, ast); 
+
+    // Your code goes here
+
+    ast.T.visit(this, null);
+    ast.I.visit(this, null);
+    System.out.println(ast.I.spelling);
+    idTable.openScope();
+    ast.PL.visit(this, null);
+    idTable.closeScope();
+    // HINT
+    // Pass ast as the 2nd argument (as done below) so that the
+    // formal parameters of the function can be extracted from ast when the
+    // function body is later visited
+    
+    ast.S.visit(this, ast);
+    
+    // This only matches one particular case - That being int/bool/float function with empty Statement
+    if (ast.S instanceof EmptyCompStmt && !(ast.T instanceof VoidType)){
+      // Error message number 31, missing return statement
+      reporter.reportError(errMesg[31], "", ast.position);
+    }
+    
+    if (ast.I.spelling.equals("main")) {
+      if (ast.T.isIntType()){
+        // All good, no problem
+      } else {
+        reporter.reportError(errMesg[1], "", ast.position);
+      }
+    }
+    
+    return null;
+  }
+
+  public Object visitDeclList(DeclList ast, Object o) {
+    ast.D.visit(this, null);
+    ast.DL.visit(this, null);
+    return null;
+  }
+
+  public Object visitEmptyDeclList(EmptyDeclList ast, Object o) {
+    return null;
+  }
+
+  public Object visitGlobalVarDecl(GlobalVarDecl ast, Object o) {
+    declareVariable(ast.I, ast);
+
+    // fill the rest
+    ast.T.visit(this, null);
+    ast.I.visit(this, null);
+    ast.E.visit(this, null);
+    
+    if (ast.T.isVoidType()) {
+      reporter.reportError(errMesg[3] + ": %", ast.I.spelling, ast.I.position);
+    }
+    
+    if (ast.T instanceof ArrayType) {
+      ArrayType at = (ArrayType) ast.T;
+      if (at.T.isFloatType()) {
+         // We need to transverse the array expr and make sure ints are convert to floats.
+        InitExpr e = (InitExpr) ast.E;
+        ExprList el = (ExprList) e.IL;
+        while (el.EL instanceof ExprList) {
+          if (el.E instanceof IntExpr) {
+            el.E = convertIntExprToFloat(el.E);
+          }
+          el = (ExprList) el.EL;
+        }
+        if (el instanceof ExprList) {
+          if (el.E instanceof IntExpr) {
+            el.E = convertIntExprToFloat(el.E);
+          }
+        }
+      }
+    }
+    
+    return null;
+  }
+
+  public Object visitLocalVarDecl(LocalVarDecl ast, Object o) {
+    declareVariable(ast.I, ast);
+
+    // fill the rest
+    ast.T.visit(this, null);
+    ast.I.visit(this, null);
+    ast.E.visit(this, null);
+    
+    if (ast.T.isVoidType()) {
+      reporter.reportError(errMesg[3] + ": %", ast.I.spelling, ast.I.position);
+    }
+    
+    if (ast.T instanceof ArrayType) {
+      ArrayType at = (ArrayType) ast.T;
+      if (at.T.isFloatType()) {
+         // We need to transverse the array expr and make sure ints are convert to floats.
+        InitExpr e = (InitExpr) ast.E;
+        ExprList el = (ExprList) e.IL;
+        while (el.EL instanceof ExprList) {
+          if (el.E instanceof IntExpr) {
+            el.E = convertIntExprToFloat(el.E);
+          }
+          el = (ExprList) el.EL;
+        }
+        if (el instanceof ExprList) {
+          if (el.E instanceof IntExpr) {
+            el.E = convertIntExprToFloat(el.E);
+          }
+        }
+      }
+    }
+    
+    
+    return null;
+  }
+
+  // Parameters
+
+ // Always returns null. Does not use the given object.
+
+  public Object visitParaList(ParaList ast, Object o) {
+    ast.P.visit(this, null);
+    ast.PL.visit(this, null);
+    return null;
+  }
+
+  public Object visitParaDecl(ParaDecl ast, Object o) {
+    declareVariable(ast.I, ast);
+
+    if (ast.T.isVoidType()) {
+      reporter.reportError(errMesg[3] + ": %", ast.I.spelling, ast.I.position);
+    } else if (ast.T.isArrayType()) {
+      if (((ArrayType) ast.T).T.isVoidType()){
+        reporter.reportError(errMesg[4] + ": %", ast.I.spelling, ast.I.position);
+      }
+    }
+    ast.T.visit(this, null);
+    ast.I.visit(this, null);
+    return null;
+  }
+
+  public Object visitEmptyParaList(EmptyParaList ast, Object o) {
+    return null;
+  }
+
+  // Arguments
+
+  // Your visitor methods for arguments go hereend If statement
+
+
+  // Types 
+
+  // Returns the type predefined in the standard environment. 
+
+  public Object visitErrorType(ErrorType ast, Object o) {
+    return StdEnvironment.errorType;
+  }
+
+  public Object visitBooleanType(BooleanType ast, Object o) {
+    return StdEnvironment.booleanType;
+  }
+
+  public Object visitIntType(IntType ast, Object o) {
+    return StdEnvironment.intType;
+  }
+
+  public Object visitFloatType(FloatType ast, Object o) {
+    return StdEnvironment.floatType;
+  }
+
+  public Object visitStringType(StringType ast, Object o) {
+    return StdEnvironment.stringType;
+  }
+
+  public Object visitVoidType(VoidType ast, Object o) {
+    return StdEnvironment.voidType;
+  }
+
+  // Literals, Identifiers and Operators
+
+  public Object visitIdent(Ident I, Object o) {
+    Decl binding = idTable.retrieve(I.spelling);
+    if (binding != null)
+      I.decl = binding;
+    return binding;
+  }
+
+  public Object visitBooleanLiteral(BooleanLiteral SL, Object o) {
+    return StdEnvironment.booleanType;
+  }
+
+  public Object visitIntLiteral(IntLiteral IL, Object o) {
+    return StdEnvironment.intType;
+  }
+
+  public Object visitFloatLiteral(FloatLiteral IL, Object o) {
+    return StdEnvironment.floatType;
+  }
+
+  public Object visitStringLiteral(StringLiteral IL, Object o) {
+    return StdEnvironment.stringType;
+  }
+
+  public Object visitOperator(Operator O, Object o) {
+    return null;
+  }
+
+  // Creates a small AST to represent the "declaration" of each built-in
+  // function, and enters it in the symbol table.
+
+  private FuncDecl declareStdFunc (Type resultType, String id, List pl) {
+
+    FuncDecl binding;
+
+    binding = new FuncDecl(resultType, new Ident(id, dummyPos), pl, 
+           new EmptyStmt(dummyPos), dummyPos);
+    idTable.insert (id, binding);
+    return binding;
+  }
+
+  // Creates small ASTs to represent "declarations" of all 
+  // build-in functions.
+  // Inserts these "declarations" into the symbol table.
+
+  private final static Ident dummyI = new Ident("x", dummyPos);
+
+  private void establishStdEnvironment () {
+
+    // Define four primitive types
+    // errorType is assigned to ill-typed expressions
+
+    StdEnvironment.booleanType = new BooleanType(dummyPos);
+    StdEnvironment.intType = new IntType(dummyPos);
+    StdEnvironment.floatType = new FloatType(dummyPos);
+    StdEnvironment.stringType = new StringType(dummyPos);
+    StdEnvironment.voidType = new VoidType(dummyPos);
+    StdEnvironment.errorType = new ErrorType(dummyPos);
+
+    // enter into the declarations for built-in functions into the table
+
+    StdEnvironment.getIntDecl = declareStdFunc( StdEnvironment.intType,
+	"getInt", new EmptyParaList(dummyPos)); 
+    StdEnvironment.putIntDecl = declareStdFunc( StdEnvironment.voidType,
+	"putInt", new ParaList(
+	new ParaDecl(StdEnvironment.intType, dummyI, dummyPos),
+	new EmptyParaList(dummyPos), dummyPos)); 
+    StdEnvironment.putIntLnDecl = declareStdFunc( StdEnvironment.voidType,
+	"putIntLn", new ParaList(
+	new ParaDecl(StdEnvironment.intType, dummyI, dummyPos),
+	new EmptyParaList(dummyPos), dummyPos)); 
+    StdEnvironment.getFloatDecl = declareStdFunc( StdEnvironment.floatType,
+	"getFloat", new EmptyParaList(dummyPos)); 
+    StdEnvironment.putFloatDecl = declareStdFunc( StdEnvironment.voidType,
+	"putFloat", new ParaList(
+	new ParaDecl(StdEnvironment.floatType, dummyI, dummyPos),
+	new EmptyParaList(dummyPos), dummyPos)); 
+    StdEnvironment.putFloatLnDecl = declareStdFunc( StdEnvironment.voidType,
+	"putFloatLn", new ParaList(
+	new ParaDecl(StdEnvironment.floatType, dummyI, dummyPos),
+	new EmptyParaList(dummyPos), dummyPos)); 
+    StdEnvironment.putBoolDecl = declareStdFunc( StdEnvironment.voidType,
+	"putBool", new ParaList(
+	new ParaDecl(StdEnvironment.booleanType, dummyI, dummyPos),
+	new EmptyParaList(dummyPos), dummyPos)); 
+    StdEnvironment.putBoolLnDecl = declareStdFunc( StdEnvironment.voidType,
+	"putBoolLn", new ParaList(
+	new ParaDecl(StdEnvironment.booleanType, dummyI, dummyPos),
+	new EmptyParaList(dummyPos), dummyPos)); 
+
+    StdEnvironment.putStringLnDecl = declareStdFunc( StdEnvironment.voidType,
+	"putStringLn", new ParaList(
+	new ParaDecl(StdEnvironment.stringType, dummyI, dummyPos),
+	new EmptyParaList(dummyPos), dummyPos)); 
+
+    StdEnvironment.putStringDecl = declareStdFunc( StdEnvironment.voidType,
+	"putString", new ParaList(
+	new ParaDecl(StdEnvironment.stringType, dummyI, dummyPos),
+	new EmptyParaList(dummyPos), dummyPos)); 
+
+    StdEnvironment.putLnDecl = declareStdFunc( StdEnvironment.voidType,
+	"putLn", new EmptyParaList(dummyPos));
+
+  }
+
+/********************************* START WORKSPACE HERE ******************************************/
+
+  // variables
+  public Object visitSimpleVar(SimpleVar ast, Object o) {
+    
+    // First we try to get the variable that is in the current scope
+    String s = ast.I.spelling;
+    IdEntry localEntry = idTable.retrieveOneLevel(s);
+    if (localEntry != null) {
+      // use the entry at the current scope
+      System.out.println("DEBUG: finish simple var - returning Local entry : " + s + " (Type: "+ TypeToString(localEntry.attr.T) + ")");
+      return localEntry.attr.T.visit(this, null);
+    } else {
+      // No entry was found at the current scope, attempt now for global.
+      Decl globalEntry = idTable.retrieve(s);
+      if (globalEntry != null) {
+        System.out.println("DEBUG: finish simple var - returning Global entry : " + s + " (Type: "+ TypeToString(globalEntry.T) + ")");
+        return globalEntry.T.visit(this, null);
+      } else {
+        System.out.println("DEBUG: Did not find variable in symbol table Variable - " + s);
+        reporter.reportError(errMesg[5] + ": %", s, ast.position);
+        return new ErrorType(dummyPos);
+      }
+    }
+  }
+
+
+  public Object visitArrayType(ArrayType ast, Object o) {
+    Type t = ast.T;
+    if (t.isVoidType()) {
+      reporter.reportError(errMesg[4] + ": %", ast.toString(), ast.position);
+    } 
+    return ast.T.visit(this, null);
+  }
+
+
+  // Arguments
+  public Object visitArgList(ArgList ast, Object o) {
+    ast.A.visit(this, null);
+    ast.AL.visit(this, null);
+    return null;
+  }
+  
+  public Object visitArg(Arg ast, Object o) {
+    Type t = (Type) ast.E.visit(this, null);
+    return t;
+  }
+
+  public Object visitEmptyArgList(EmptyArgList ast, Object o) {
+    return null;
+  }
+
+  public Object visitArrayExpr(ArrayExpr ast, Object o) {
+    ast.V.visit(this, null);
+    ast.E.visit(this, null);
+    
+    if (ast.E instanceof IntExpr){
+      // No problem. 
+    } else {
+      reporter.reportError(errMesg[17], "", ast.position);
+    }
+    
+    return null;
+  }
+
+  public Object visitAssignExpr(AssignExpr ast, Object o) {
+    System.out.println("DEBUG: start Assign Expr");
+    ast.E1.visit(this, null);
+    ast.E2.visit(this, null);
+    
+    if (ast.E1 instanceof VarExpr) {
+      // determine the type from the variable
+      VarExpr test1 = (VarExpr) ast.E1;
+      SimpleVar test2 = (SimpleVar) test1.V;
+      String variable = test2.I.spelling;
+      System.out.println(variable);
+      Decl result = idTable.retrieve(variable);
+      
+      if (result == null){
+        System.out.println("Its null! - undeclared variable?");
+      } else if (result.isFuncDecl()) { 
+        System.out.println("DEBUG: The Variable is a Function");
+        reporter.reportError(errMesg[11] + ": %", variable, ast.position);
+      } else if (result.T.isIntType()) {
+        System.out.println("Its INT!");
+        if (ast.E2 instanceof BooleanExpr){
+          // given that E1 is an Int and E2 is a bool, they are not compatiable
+          reporter.reportError(errMesg[6], "", ast.position);
+        } else if (ast.E2 instanceof BinaryExpr) {
+          System.out.println("need to either figure out the type of the binary or if there is an error");
+        }
+        
+        if (!(result.T.assignable(ast.E2.type))) {
+          System.out.println("testing assignable");
+        }
+      }
+    } else {
+      // left side of the = is not a variable expression. 
+      // TODO, the case for arrays
+      reporter.reportError(errMesg[7], "", ast.position);
+    }
+
+    System.out.println("DEBUG: end Assign Expr");
+    return null;
+  } 
+
+  public Object visitCallExpr(CallExpr ast, Object o) {
+    ast.I.visit(this, null);
+    ast.AL.visit(this, null);
+    
+    String s = ast.I.spelling;
+    // Since it is a function we do not care about the level of scope. 
+    Decl symbol = idTable.retrieve(s);
+    System.out.println("DEBUG: Function name is: " + s);
+    if (symbol == null) {
+      reporter.reportError(errMesg[5] + ": %", s, ast.I.position);
+    } else if (symbol.isFuncDecl()) {
+      // Its a func which is good. Need to get paras
+      FuncDecl func = (FuncDecl) symbol;
+      
+      if (func instanceof FuncDecl) {
+        if (func.PL != null) {
+          ParaList pl = (ParaList) func.PL;
+          ArgList al = (ArgList) ast.AL;
+          CompareArgListToParaList(al, pl);
+        }
+      }
+      
+    } else {
+      reporter.reportError(errMesg[19] + ": %", s, ast.I.position);
+    }
+    
+    
+
+    
+    return null;
+  }
+
+  public Object visitExprList(ExprList ast, Object o) {
+    ast.E.visit(this, null);
+    ast.EL.visit(this, null);
+    return null;
+  } 
+
+  public Object visitInitExpr(InitExpr ast, Object o) {
+    ast.IL.visit(this, null);
+    return null;
+  }
+
+  public Object visitBinaryExpr(BinaryExpr ast, Object o) {
+    ast.O.visit(this, null);
+    Type T1 = (Type) ast.E1.visit(this, null);
+    Type T2 = (Type) ast.E2.visit(this, null);
+    
+    if (T1.isErrorType() || T2.isErrorType()) {
+      return StdEnvironment.errorType;
+    }
+    
+    if (ast.O.spelling.equals("+") || ast.O.spelling.equals("-") || ast.O.spelling.equals("/") || ast.O.spelling.equals("*")){
+      // we expect both Exprs to be of type in
+      if (T1.isIntType() && T2.isIntType()){
+        return StdEnvironment.intType;
+      } else if (T1.isIntType() && T2.isFloatType()) {
+        ast.E1 = convertIntExprToFloat(ast.E1);
+      	return StdEnvironment.floatType;
+      } else if (T1.isFloatType() && T2.isIntType()) {
+        ast.E2 = convertIntExprToFloat(ast.E2);
+        return StdEnvironment.floatType;
+      } else if (T1.isFloatType() && T2.isFloatType()) {
+        return StdEnvironment.floatType;
+      } else {
+        reporter.reportError(errMesg[9] + ": %", ast.O.spelling, ast.position);
+        return StdEnvironment.errorType;
+      }
+    } else if (ast.O.spelling.equals("<") || ast.O.spelling.equals("<=") || ast.O.spelling.equals(">") || ast.O.spelling.equals(">=")
+                || ast.O.spelling.equals("==") || ast.O.spelling.equals("!=")) {
+      if (T1.isIntType() && T2.isIntType()){
+        return StdEnvironment.booleanType;
+      } else if (T1.isIntType() && T2.isFloatType()) {
+        ast.E1 = convertIntExprToFloat(ast.E1);
+      	return StdEnvironment.booleanType;
+      } else if (T1.isFloatType() && T2.isIntType()) {
+        ast.E2 = convertIntExprToFloat(ast.E2);
+        return StdEnvironment.booleanType;
+      } else if (T1.isFloatType() && T2.isFloatType()) {
+        return StdEnvironment.booleanType;
+      } else {
+        reporter.reportError(errMesg[9] + ": %", ast.O.spelling, ast.position);
+        return StdEnvironment.errorType;
+      }
+    }
+    
+    if (T1.assignable(T2)) {
+      System.out.println("yay");
+      return T1;
+    } else {
+      return new ErrorType(dummyPos);
+    }
+  }
+
+
+  public Object visitUnaryExpr(UnaryExpr ast, Object o) {
+    ast.O.visit(this, null);
+    ast.E.visit(this, null);
+    
+    
+    testExprIsBool(ast.E, 10);
+
+    return null;
+  }
+
+  public Object visitEmptyCompStmt(EmptyCompStmt ast, Object o) {
+    
+  
+    return null;
+  }
+
+  public Object visitReturnStmt(ReturnStmt ast, Object o) {
+    if (o instanceof FuncDecl) {
+      FuncDecl fd = (FuncDecl) o;
+      Type expectedType = fd.T;
+      if (expectedType.assignable(ast.E)) {
+        System.out.println("DEBUG: return Expr is the same type of function");
+      } else {
+        // Need to test for Bin statement
+        reporter.reportError(errMesg[8], "", ast.position);
+      }
+    } else {
+      System.out.println("DEBUG: Issue in visit Return Stmt - We expected object to have FuncDecl");
+    }
+    ast.E.visit(this, null);
+    return null;
+  }
+  
+  public Object visitContinueStmt(ContinueStmt ast, Object o) {
+    if (o instanceof ForStmt || o instanceof WhileStmt) {
+      // no issue we came from  
+    } else {
+      reporter.reportError(errMesg[24], "", ast.position);
+    }
+    return null;
+  }
+  
+  public Object visitBreakStmt(BreakStmt ast, Object o) {
+    if (o instanceof ForStmt || o instanceof WhileStmt) {
+      // no issue we came from  
+    } else {
+      reporter.reportError(errMesg[24], "", ast.position);
+    }
+    return null;
+  }
+  
+  public Object visitForStmt(ForStmt ast, Object o) {
+    System.out.println("DEBUG: start For statement");
+    ast.E1.visit(this, null);
+    ast.E2.visit(this, null);
+    ast.E3.visit(this, null);
+    ast.S.visit(this, o);
+    
+    testExprIsBool(ast.E2, 21);
+
+    System.out.println("DEBUG: end For statement");
+    return null;
+  }
+  
+  public Object visitWhileStmt(WhileStmt ast, Object o) {
+    System.out.println("DEBUG: start While statement");
+    ast.E.visit(this, null);
+    ast.S.visit(this, o);
+    testExprIsBool(ast.E, 22);
+    System.out.println("DEBUG: end While statement");
+    return null;
+  }
+  
+  public Object visitIfStmt(IfStmt ast, Object o) {
+    System.out.println("DEBUG: start If statement");
+    Type t = (Type) ast.E.visit(this, null);
+    ast.S1.visit(this, null);
+    ast.S2.visit(this, null);
+    
+    if (t.isBooleanType()){
+      // no problem?
+    } else {
+      testExprIsBool(ast.E, 20);
+    }
+    
+    if (ast.E instanceof BinaryExpr) {
+      System.out.println("need to determine if Bin expr is a valid boolean --------------------------------------");
+      Type Result = (Type) ast.E.visit(this, null);
+      if (Result.isIntType()) {
+        System.out.println("Result is INT!!!!!!!!!!!!!!!!!");
+      }
+      BinaryExpr test = (BinaryExpr) ast.E;
+      System.out.println(test.O.spelling);
+      System.out.println(test.O.spelling.equals(">"));
+      
+      if (test.O.spelling.equals(">")) {
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+      }
+      System.out.println(Result);
+    } else {
+      testExprIsBool(ast.E, 20);
+    }
+    System.out.println("DEBUG: end If statement");
+    return null;
+  }
+  
+  public Object visitEmptyExprList(EmptyExprList ast, Object o) {
+    return null;
+  }
+
+
+  public void testExprIsBool(Expr expr, int errorMessage) {
+    if (expr == null) {
+      return;
+    } else if (expr.type == null) {
+      return;
+    }
+  
+    if (expr.type.isVoidType()){
+      reporter.reportError(errMesg[errorMessage] + " (found: %)", "void", expr.position);
+    } else if (expr.type.isIntType()){
+      reporter.reportError(errMesg[errorMessage] + " (found: %)", "int", expr.position);
+    } else if (expr.type.isFloatType()){
+      reporter.reportError(errMesg[errorMessage] + " (found: %)", "float", expr.position);
+    } else if (expr.type.isStringType()){
+      reporter.reportError(errMesg[errorMessage] + " (found: %)", "string", expr.position);
+    } else if (expr.type.isArrayType()){
+      reporter.reportError(errMesg[errorMessage] + " (found: %)", "array", expr.position);
+    } else if (expr.type.isErrorType()){
+      reporter.reportError(errMesg[errorMessage] + " (found: %)", "error", expr.position);
+    }
+  }
+
+  public boolean isExprVar(Expr expr) {
+    return (expr instanceof VarExpr);
+  }
+  
+  public String TypeToString(Type type) {
+     if (type.isVoidType()){
+      return "void";
+    } else if (type.isIntType()){
+      return "int";
+    } else if (type.isFloatType()){
+      return "float";
+    } else if (type.isStringType()){
+      return "string";
+    } else if (type.isArrayType()){
+      ArrayType a = (ArrayType) type;
+      return "array" + " of type - " + TypeToString(a.T);
+    } else if (type.isErrorType()){
+      return "error";
+    } else {
+      return "error2";
+    }
+  }
+  
+  public UnaryExpr convertIntExprToFloat(Expr expr){
+    Operator o = new Operator("i2f", expr.position);
+    UnaryExpr E = new UnaryExpr(o, expr, expr.position);
+    return E;
+  }
+
+  public void CompareArgListToParaList(ArgList al, ParaList pl) {
+    
+    do {
+      Type pt = pl.P.T;
+      Type at = (Type) al.A.visit(this, null);
+      if (pt.assignable(at)) {
+        // no problem
+      } else {
+        reporter.reportError(errMesg[27] + ": %", pl.P.I.spelling, al.A.position);
+      }
+      
+      if (al.AL instanceof EmptyArgList) {
+        break;
+      } else if (pl.PL instanceof EmptyParaList) {
+        break;
+      }
+      
+      al = (ArgList) al.AL;
+      pl = (ParaList) pl.PL;
+    } while (al.AL instanceof ArgList && pl.PL instanceof ParaList);
+    
+    Type pt = pl.P.T;
+    Type at = (Type) al.A.visit(this, null);
+    if (pt.assignable(at)) {
+      // no problem
+    } else {
+      reporter.reportError(errMesg[27] + ": %", pl.P.I.spelling, al.A.position);
+    }
+    
+    
+    if (al.AL instanceof EmptyArgList && pl.PL instanceof EmptyParaList) {
+      // no issue, they have the same 
+    } else if (al.AL instanceof EmptyArgList) {
+      // too few arguments
+      reporter.reportError(errMesg[26], "", al.A.position);
+    } else if (pl.PL instanceof EmptyParaList) {
+      // too many arguments
+      reporter.reportError(errMesg[25], "", al.A.position);
+    }
+  
+  }
+
+}

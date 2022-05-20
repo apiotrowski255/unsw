@@ -1,0 +1,1161 @@
+<?xml version="1.0"?>
+<root ptr="0x55b4b888ac60" id="0" symbol="11SwRootFrame" lower="1">
+ <sfxViewShells>
+  <SwView>
+   <SfxViewShell ptr="0x55b4b8435de0" id="0"/>
+   <SwCursorShell>
+    <SwViewShell/>
+    <m_pCurrentCursor>
+     <SwPaM>
+      <point>
+       <SwPosition nNode="9" nContent="11"/>
+      </point>
+     </SwPaM>
+    </m_pCurrentCursor>
+   </SwCursorShell>
+  </SwView>
+ </sfxViewShells>
+ <infos>
+  <bounds left="284" top="284" width="18669" height="33960" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+  <prtBounds left="0" top="0" width="18669" height="33960"/>
+ </infos>
+ <page ptr="0x7fac44f85000" id="1" symbol="11SwPageFrame" next="56" upper="0" lower="2">
+  <page_status ValidFlyLayout="true" ValidFlyContent="true" ValidFlyInCnt="true" ValidLayout="true" ValidContent="true"/>
+  <infos>
+   <bounds left="7047" top="284" width="11906" height="16838" mbFixSize="true" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+   <prtBounds left="1134" top="1134" width="9638" height="14570"/>
+  </infos>
+  <body ptr="0x7fac44f87000" id="2" symbol="11SwBodyFrame" upper="1" lower="13">
+   <infos>
+    <bounds left="8181" top="1418" width="9638" height="14570" mbFixSize="true" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+    <prtBounds left="0" top="0" width="9638" height="14570"/>
+   </infos>
+   <txt ptr="0x7fac44f88b40" id="13" symbol="11SwTextFrame" next="4" upper="2" txtNodeIndex="9">
+    <infos>
+     <bounds left="8181" top="1418" width="9638" height="659" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="240" width="9638" height="419"/>
+    </infos>
+Z5115499 - Exercise 1    <Text nLength="21" nType="POR_PARA" nHeight="419" nWidth="3745"/>
+    <LineBreak nWidth="3745"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f88120" id="4" symbol="11SwTextFrame" next="3" prev="13" upper="2" txtNodeIndex="10">
+    <infos>
+     <bounds left="8181" top="2077" width="9638" height="691" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="320" width="9638" height="371"/>
+    </infos>
+Question 1    <Text nLength="10" nType="POR_PARA" nHeight="371" nWidth="1664"/>
+    <LineBreak nWidth="1664"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f88000" id="3" symbol="11SwTextFrame" next="7" prev="4" upper="2" txtNodeIndex="11">
+    <infos>
+     <bounds left="8181" top="2768" width="9638" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="120" width="9638" height="276"/>
+    </infos>
+destination IP: 128.119.245.12    <Text nLength="30" nType="POR_PARA" nHeight="276" nWidth="2944"/>
+    <LineBreak nWidth="2944"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f88480" id="7" symbol="11SwTextFrame" next="5" prev="3" upper="2" txtNodeIndex="12">
+    <infos>
+     <bounds left="8181" top="3164" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+source  ip: 192.168.1.102    <Text nLength="25" nType="POR_PARA" nHeight="276" nWidth="2440"/>
+    <LineBreak nWidth="2440"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f88240" id="5" symbol="11SwTextFrame" next="6" prev="7" upper="2" txtNodeIndex="13">
+    <infos>
+     <bounds left="8181" top="3440" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+destination port: 80    <Text nLength="20" nType="POR_PARA" nHeight="276" nWidth="1866"/>
+    <LineBreak nWidth="1866"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f88360" id="6" symbol="11SwTextFrame" next="9" prev="5" upper="2" txtNodeIndex="14">
+    <infos>
+     <bounds left="8181" top="3716" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+source port 1161    <Text nLength="16" nType="POR_PARA" nHeight="276" nWidth="1604"/>
+    <LineBreak nWidth="1604"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f886c0" id="9" symbol="11SwTextFrame" next="8" prev="6" upper="2" txtNodeIndex="15">
+    <infos>
+     <bounds left="8181" top="3992" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f885a0" id="8" symbol="11SwTextFrame" next="10" prev="9" upper="2" txtNodeIndex="16">
+    <infos>
+     <bounds left="8181" top="4268" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Question 2    <Text nLength="10" nType="POR_PARA" nHeight="276" nWidth="1047"/>
+    <LineBreak nWidth="1047"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f887e0" id="10" symbol="11SwTextFrame" next="76" prev="8" upper="2" txtNodeIndex="17">
+    <infos>
+     <bounds left="8181" top="4544" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Sequence number: 232129013    <Text nLength="26" nType="POR_PARA" nHeight="276" nWidth="2919"/>
+    <LineBreak nWidth="2919"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8ea8" id="76" symbol="11SwTextFrame" next="77" prev="10" upper="2" txtNodeIndex="18">
+    <infos>
+     <bounds left="8181" top="4820" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ccf010" id="77" symbol="11SwTextFrame" next="79" prev="76" upper="2" txtNodeIndex="19">
+    <infos>
+     <bounds left="8181" top="5096" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Question 3 &amp; 4    <Text nLength="14" nType="POR_PARA" nHeight="276" nWidth="1473"/>
+    <LineBreak nWidth="1473"/>
+    <Finish/>
+   </txt>
+   <tab ptr="0x7fac4403d000" id="79" symbol="10SwTabFrame" next="78" prev="77" upper="2" lower="80">
+    <infos>
+     <bounds left="8181" top="5372" width="9638" height="2662" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="2652"/>
+    </infos>
+    <row ptr="0x7fac4403e000" id="80" symbol="10SwRowFrame" next="93" upper="79" lower="81">
+     <infos>
+      <bounds left="8181" top="5372" width="9638" height="672" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+      <prtBounds left="0" top="0" width="9638" height="672"/>
+     </infos>
+     <cell ptr="0x7fac4403f000" id="81" symbol="11SwCellFrame" next="83" upper="80" lower="82">
+      <infos>
+       <bounds left="8181" top="5372" width="1606" height="672" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="552"/>
+      </infos>
+      <txt ptr="0x7fac44ccf250" id="82" symbol="11SwTextFrame" upper="81" txtNodeIndex="22">
+       <infos>
+        <bounds left="8236" top="5437" width="1496" height="552" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="552"/>
+       </infos>
+Sequence Number       <Text nLength="9" nType="POR_PARA" nHeight="276" nWidth="980"/>
+       <LineBreak nWidth="980"/>
+       <Text nLength="6" nType="POR_LAY" nHeight="276" nWidth="787"/>
+       <LineBreak nWidth="787"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403f0e0" id="83" symbol="11SwCellFrame" next="85" prev="81" upper="80" lower="84">
+      <infos>
+       <bounds left="9787" top="5372" width="1606" height="672" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="552"/>
+      </infos>
+      <txt ptr="0x7fac44ccf370" id="84" symbol="11SwTextFrame" upper="83" txtNodeIndex="25">
+       <infos>
+        <bounds left="9842" top="5437" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+Time Sent       <Text nLength="9" nType="POR_PARA" nHeight="276" nWidth="985"/>
+       <LineBreak nWidth="985"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403f1c0" id="85" symbol="11SwCellFrame" next="87" prev="83" upper="80" lower="86">
+      <infos>
+       <bounds left="11393" top="5372" width="1607" height="672" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="552"/>
+      </infos>
+      <txt ptr="0x7fac44ccf490" id="86" symbol="11SwTextFrame" upper="85" txtNodeIndex="28">
+       <infos>
+        <bounds left="11448" top="5437" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+Time Received       <Text nLength="13" nType="POR_PARA" nHeight="276" nWidth="1451"/>
+       <LineBreak nWidth="1451"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403f2a0" id="87" symbol="11SwCellFrame" next="89" prev="85" upper="80" lower="88">
+      <infos>
+       <bounds left="13000" top="5372" width="1606" height="672" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="552"/>
+      </infos>
+      <txt ptr="0x7fac44ccf5b0" id="88" symbol="11SwTextFrame" upper="87" txtNodeIndex="31">
+       <infos>
+        <bounds left="13055" top="5437" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+Sample Time       <Text nLength="11" nType="POR_PARA" nHeight="276" nWidth="1274"/>
+       <LineBreak nWidth="1274"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403f380" id="89" symbol="11SwCellFrame" next="91" prev="87" upper="80" lower="90">
+      <infos>
+       <bounds left="14606" top="5372" width="1606" height="672" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="552"/>
+      </infos>
+      <txt ptr="0x7fac44ccf6d0" id="90" symbol="11SwTextFrame" upper="89" txtNodeIndex="34">
+       <infos>
+        <bounds left="14661" top="5437" width="1496" height="552" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="552"/>
+       </infos>
+Estimated Time       <Text nLength="10" nType="POR_PARA" nHeight="276" nWidth="1020"/>
+       <LineBreak nWidth="1020"/>
+       <Text nLength="4" nType="POR_LAY" nHeight="276" nWidth="498"/>
+       <LineBreak nWidth="498"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403f460" id="91" symbol="11SwCellFrame" prev="89" upper="80" lower="92">
+      <infos>
+       <bounds left="16212" top="5372" width="1607" height="672" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="552"/>
+      </infos>
+      <txt ptr="0x7fac44ccf7f0" id="92" symbol="11SwTextFrame" upper="91" txtNodeIndex="37">
+       <infos>
+        <bounds left="16267" top="5437" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+Length       <Text nLength="6" nType="POR_PARA" nHeight="276" nWidth="680"/>
+       <LineBreak nWidth="680"/>
+       <Finish/>
+      </txt>
+     </cell>
+    </row>
+    <row ptr="0x7fac4403e0f8" id="93" symbol="10SwRowFrame" next="106" prev="80" upper="79" lower="94">
+     <infos>
+      <bounds left="8181" top="6044" width="9638" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+      <prtBounds left="0" top="0" width="9638" height="396"/>
+     </infos>
+     <cell ptr="0x7fac4403f540" id="94" symbol="11SwCellFrame" next="96" upper="93" lower="95">
+      <infos>
+       <bounds left="8181" top="6044" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44ccf910" id="95" symbol="11SwTextFrame" upper="94" txtNodeIndex="40">
+       <infos>
+        <bounds left="8236" top="6109" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+232129013       <Text nLength="9" nType="POR_PARA" nHeight="276" nWidth="1080"/>
+       <LineBreak nWidth="1080"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403f620" id="96" symbol="11SwCellFrame" next="98" prev="94" upper="93" lower="97">
+      <infos>
+       <bounds left="9787" top="6044" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44ccfa30" id="97" symbol="11SwTextFrame" upper="96" txtNodeIndex="43">
+       <infos>
+        <bounds left="9842" top="6109" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.026477       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403f700" id="98" symbol="11SwCellFrame" next="100" prev="96" upper="93" lower="99">
+      <infos>
+       <bounds left="11393" top="6044" width="1607" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44ccfb50" id="99" symbol="11SwTextFrame" upper="98" txtNodeIndex="46">
+       <infos>
+        <bounds left="11448" top="6109" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+0.053937       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403f7e0" id="100" symbol="11SwCellFrame" next="102" prev="98" upper="93" lower="101">
+      <infos>
+       <bounds left="13000" top="6044" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44ccfc70" id="101" symbol="11SwTextFrame" upper="100" txtNodeIndex="49">
+       <infos>
+        <bounds left="13055" top="6109" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.02746       <Text nLength="7" nType="POR_PARA" nHeight="276" nWidth="780"/>
+       <LineBreak nWidth="780"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403f8c0" id="102" symbol="11SwCellFrame" next="104" prev="100" upper="93" lower="103">
+      <infos>
+       <bounds left="14606" top="6044" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44ccfd90" id="103" symbol="11SwTextFrame" upper="102" txtNodeIndex="52">
+       <infos>
+        <bounds left="14661" top="6109" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.02746       <Text nLength="7" nType="POR_PARA" nHeight="276" nWidth="780"/>
+       <LineBreak nWidth="780"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403f9a0" id="104" symbol="11SwCellFrame" prev="102" upper="93" lower="105">
+      <infos>
+       <bounds left="16212" top="6044" width="1607" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44ccfeb0" id="105" symbol="11SwTextFrame" upper="104" txtNodeIndex="55">
+       <infos>
+        <bounds left="16267" top="6109" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+565       <Text nLength="3" nType="POR_PARA" nHeight="276" nWidth="360"/>
+       <LineBreak nWidth="360"/>
+       <Finish/>
+      </txt>
+     </cell>
+    </row>
+    <row ptr="0x7fac4403e1f0" id="106" symbol="10SwRowFrame" next="119" prev="93" upper="79" lower="107">
+     <infos>
+      <bounds left="8181" top="6440" width="9638" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+      <prtBounds left="0" top="0" width="9638" height="396"/>
+     </infos>
+     <cell ptr="0x7fac4403fa80" id="107" symbol="11SwCellFrame" next="109" upper="106" lower="108">
+      <infos>
+       <bounds left="8181" top="6440" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040000" id="108" symbol="11SwTextFrame" upper="107" txtNodeIndex="58">
+       <infos>
+        <bounds left="8236" top="6505" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+232129578       <Text nLength="9" nType="POR_PARA" nHeight="276" nWidth="1080"/>
+       <LineBreak nWidth="1080"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403fb60" id="109" symbol="11SwCellFrame" next="111" prev="107" upper="106" lower="110">
+      <infos>
+       <bounds left="9787" top="6440" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040120" id="110" symbol="11SwTextFrame" upper="109" txtNodeIndex="61">
+       <infos>
+        <bounds left="9842" top="6505" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.041737       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403fc40" id="111" symbol="11SwCellFrame" next="113" prev="109" upper="106" lower="112">
+      <infos>
+       <bounds left="11393" top="6440" width="1607" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040240" id="112" symbol="11SwTextFrame" upper="111" txtNodeIndex="64">
+       <infos>
+        <bounds left="11448" top="6505" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+0.077294       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403fd20" id="113" symbol="11SwCellFrame" next="115" prev="111" upper="106" lower="114">
+      <infos>
+       <bounds left="13000" top="6440" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040360" id="114" symbol="11SwTextFrame" upper="113" txtNodeIndex="67">
+       <infos>
+        <bounds left="13055" top="6505" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.035557       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403fe00" id="115" symbol="11SwCellFrame" next="117" prev="113" upper="106" lower="116">
+      <infos>
+       <bounds left="14606" top="6440" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040480" id="116" symbol="11SwTextFrame" upper="115" txtNodeIndex="70">
+       <infos>
+        <bounds left="14661" top="6505" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.02846       <Text nLength="7" nType="POR_PARA" nHeight="276" nWidth="780"/>
+       <LineBreak nWidth="780"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac4403fee0" id="117" symbol="11SwCellFrame" prev="115" upper="106" lower="118">
+      <infos>
+       <bounds left="16212" top="6440" width="1607" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="276"/>
+      </infos>
+      <txt ptr="0x7fac440405a0" id="118" symbol="11SwTextFrame" upper="117" txtNodeIndex="73">
+       <infos>
+        <bounds left="16267" top="6505" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+1460       <Text nLength="4" nType="POR_PARA" nHeight="276" nWidth="480"/>
+       <LineBreak nWidth="480"/>
+       <Finish/>
+      </txt>
+     </cell>
+    </row>
+    <row ptr="0x7fac4403e2e8" id="119" symbol="10SwRowFrame" next="132" prev="106" upper="79" lower="120">
+     <infos>
+      <bounds left="8181" top="6836" width="9638" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+      <prtBounds left="0" top="0" width="9638" height="396"/>
+     </infos>
+     <cell ptr="0x7fac44041008" id="120" symbol="11SwCellFrame" next="122" upper="119" lower="121">
+      <infos>
+       <bounds left="8181" top="6836" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac440406c0" id="121" symbol="11SwTextFrame" upper="120" txtNodeIndex="76">
+       <infos>
+        <bounds left="8236" top="6901" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+232131038       <Text nLength="9" nType="POR_PARA" nHeight="276" nWidth="1080"/>
+       <LineBreak nWidth="1080"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac440410e8" id="122" symbol="11SwCellFrame" next="124" prev="120" upper="119" lower="123">
+      <infos>
+       <bounds left="9787" top="6836" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac440407e0" id="123" symbol="11SwTextFrame" upper="122" txtNodeIndex="79">
+       <infos>
+        <bounds left="9842" top="6901" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.054026       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac440411c8" id="124" symbol="11SwCellFrame" next="126" prev="122" upper="119" lower="125">
+      <infos>
+       <bounds left="11393" top="6836" width="1607" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040900" id="125" symbol="11SwTextFrame" upper="124" txtNodeIndex="82">
+       <infos>
+        <bounds left="11448" top="6901" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+0.124085       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac440412a8" id="126" symbol="11SwCellFrame" next="128" prev="124" upper="119" lower="127">
+      <infos>
+       <bounds left="13000" top="6836" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040a20" id="127" symbol="11SwTextFrame" upper="126" txtNodeIndex="85">
+       <infos>
+        <bounds left="13055" top="6901" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.070059       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac44041388" id="128" symbol="11SwCellFrame" next="130" prev="126" upper="119" lower="129">
+      <infos>
+       <bounds left="14606" top="6836" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040b40" id="129" symbol="11SwTextFrame" upper="128" txtNodeIndex="88">
+       <infos>
+        <bounds left="14661" top="6901" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.03365       <Text nLength="7" nType="POR_PARA" nHeight="276" nWidth="780"/>
+       <LineBreak nWidth="780"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac44041468" id="130" symbol="11SwCellFrame" prev="128" upper="119" lower="131">
+      <infos>
+       <bounds left="16212" top="6836" width="1607" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040c60" id="131" symbol="11SwTextFrame" upper="130" txtNodeIndex="91">
+       <infos>
+        <bounds left="16267" top="6901" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+1460       <Text nLength="4" nType="POR_PARA" nHeight="276" nWidth="480"/>
+       <LineBreak nWidth="480"/>
+       <Finish/>
+      </txt>
+     </cell>
+    </row>
+    <row ptr="0x7fac4403e3e0" id="132" symbol="10SwRowFrame" next="145" prev="119" upper="79" lower="133">
+     <infos>
+      <bounds left="8181" top="7232" width="9638" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+      <prtBounds left="0" top="0" width="9638" height="396"/>
+     </infos>
+     <cell ptr="0x7fac44041548" id="133" symbol="11SwCellFrame" next="135" upper="132" lower="134">
+      <infos>
+       <bounds left="8181" top="7232" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040d80" id="134" symbol="11SwTextFrame" upper="133" txtNodeIndex="94">
+       <infos>
+        <bounds left="8236" top="7297" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+232132498       <Text nLength="9" nType="POR_PARA" nHeight="276" nWidth="1080"/>
+       <LineBreak nWidth="1080"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac44041628" id="135" symbol="11SwCellFrame" next="137" prev="133" upper="132" lower="136">
+      <infos>
+       <bounds left="9787" top="7232" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44040ea0" id="136" symbol="11SwTextFrame" upper="135" txtNodeIndex="97">
+       <infos>
+        <bounds left="9842" top="7297" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.054690       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac44041708" id="137" symbol="11SwCellFrame" next="139" prev="135" upper="132" lower="138">
+      <infos>
+       <bounds left="11393" top="7232" width="1607" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44042008" id="138" symbol="11SwTextFrame" upper="137" txtNodeIndex="100">
+       <infos>
+        <bounds left="11448" top="7297" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+0.169118       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="891"/>
+       <LineBreak nWidth="891"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac440417e8" id="139" symbol="11SwCellFrame" next="141" prev="137" upper="132" lower="140">
+      <infos>
+       <bounds left="13000" top="7232" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44042128" id="140" symbol="11SwTextFrame" upper="139" txtNodeIndex="103">
+       <infos>
+        <bounds left="13055" top="7297" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.114428       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="891"/>
+       <LineBreak nWidth="891"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac440418c8" id="141" symbol="11SwCellFrame" next="143" prev="139" upper="132" lower="142">
+      <infos>
+       <bounds left="14606" top="7232" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44042248" id="142" symbol="11SwTextFrame" upper="141" txtNodeIndex="106">
+       <infos>
+        <bounds left="14661" top="7297" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.04374       <Text nLength="7" nType="POR_PARA" nHeight="276" nWidth="780"/>
+       <LineBreak nWidth="780"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac440419a8" id="143" symbol="11SwCellFrame" prev="141" upper="132" lower="144">
+      <infos>
+       <bounds left="16212" top="7232" width="1607" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44042368" id="144" symbol="11SwTextFrame" upper="143" txtNodeIndex="109">
+       <infos>
+        <bounds left="16267" top="7297" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+1460       <Text nLength="4" nType="POR_PARA" nHeight="276" nWidth="480"/>
+       <LineBreak nWidth="480"/>
+       <Finish/>
+      </txt>
+     </cell>
+    </row>
+    <row ptr="0x7fac4403e4d8" id="145" symbol="10SwRowFrame" prev="132" upper="79" lower="146">
+     <infos>
+      <bounds left="8181" top="7628" width="9638" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+      <prtBounds left="0" top="0" width="9638" height="396"/>
+     </infos>
+     <cell ptr="0x7fac44041a88" id="146" symbol="11SwCellFrame" next="148" upper="145" lower="147">
+      <infos>
+       <bounds left="8181" top="7628" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44042488" id="147" symbol="11SwTextFrame" upper="146" txtNodeIndex="112">
+       <infos>
+        <bounds left="8236" top="7693" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+232133958       <Text nLength="9" nType="POR_PARA" nHeight="276" nWidth="1080"/>
+       <LineBreak nWidth="1080"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac44041b68" id="148" symbol="11SwCellFrame" next="150" prev="146" upper="145" lower="149">
+      <infos>
+       <bounds left="9787" top="7628" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac440425a8" id="149" symbol="11SwTextFrame" upper="148" txtNodeIndex="115">
+       <infos>
+        <bounds left="9842" top="7693" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.077405       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac44041c48" id="150" symbol="11SwCellFrame" next="152" prev="148" upper="145" lower="151">
+      <infos>
+       <bounds left="11393" top="7628" width="1607" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="276"/>
+      </infos>
+      <txt ptr="0x7fac440426c8" id="151" symbol="11SwTextFrame" upper="150" txtNodeIndex="118">
+       <infos>
+        <bounds left="11448" top="7693" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+0.217299       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac44041d28" id="152" symbol="11SwCellFrame" next="154" prev="150" upper="145" lower="153">
+      <infos>
+       <bounds left="13000" top="7628" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac440427e8" id="153" symbol="11SwTextFrame" upper="152" txtNodeIndex="121">
+       <infos>
+        <bounds left="13055" top="7693" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.139894       <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="900"/>
+       <LineBreak nWidth="900"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac44041e08" id="154" symbol="11SwCellFrame" next="156" prev="152" upper="145" lower="155">
+      <infos>
+       <bounds left="14606" top="7628" width="1606" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1496" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44042908" id="155" symbol="11SwTextFrame" upper="154" txtNodeIndex="124">
+       <infos>
+        <bounds left="14661" top="7693" width="1496" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1496" height="276"/>
+       </infos>
+0.05575       <Text nLength="7" nType="POR_PARA" nHeight="276" nWidth="780"/>
+       <LineBreak nWidth="780"/>
+       <Finish/>
+      </txt>
+     </cell>
+     <cell ptr="0x7fac44041ee8" id="156" symbol="11SwCellFrame" prev="154" upper="145" lower="157">
+      <infos>
+       <bounds left="16212" top="7628" width="1607" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+       <prtBounds left="55" top="65" width="1497" height="276"/>
+      </infos>
+      <txt ptr="0x7fac44042a28" id="157" symbol="11SwTextFrame" upper="156" txtNodeIndex="127">
+       <infos>
+        <bounds left="16267" top="7693" width="1497" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+        <prtBounds left="0" top="0" width="1497" height="276"/>
+       </infos>
+1460       <Text nLength="4" nType="POR_PARA" nHeight="276" nWidth="480"/>
+       <LineBreak nWidth="480"/>
+       <Finish/>
+      </txt>
+     </cell>
+    </row>
+   </tab>
+   <txt ptr="0x7fac44ccf130" id="78" symbol="11SwTextFrame" next="12" prev="79" upper="2" txtNodeIndex="130">
+    <infos>
+     <bounds left="8181" top="8034" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f88a20" id="12" symbol="11SwTextFrame" next="11" prev="78" upper="2" txtNodeIndex="131">
+    <infos>
+     <bounds left="8181" top="8310" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f88900" id="11" symbol="11SwTextFrame" next="15" prev="12" upper="2" txtNodeIndex="132">
+    <infos>
+     <bounds left="8181" top="8586" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Q5    <Text nLength="2" nType="POR_PARA" nHeight="276" nWidth="293"/>
+    <LineBreak nWidth="293"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f88c60" id="15" symbol="11SwTextFrame" next="16" prev="11" upper="2" txtNodeIndex="133">
+    <infos>
+     <bounds left="8181" top="8862" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+win=5840    <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="975"/>
+    <LineBreak nWidth="975"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f88d80" id="16" symbol="11SwTextFrame" next="17" prev="15" upper="2" txtNodeIndex="134">
+    <infos>
+     <bounds left="8181" top="9138" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+lack of server space – the win space should be dropping.     <Text nLength="57" nType="POR_PARA" nHeight="276" nWidth="5478"/>
+    <LineBreak nWidth="5478"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44f88ea0" id="17" symbol="11SwTextFrame" next="19" prev="16" upper="2" txtNodeIndex="135">
+    <infos>
+     <bounds left="8181" top="9414" width="9638" height="552" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="552"/>
+    </infos>
+There is No throttling. Throttling happens when there is a lack of server space – and this would cause the win space to drop.     <Text nLength="97" nType="POR_PARA" nHeight="276" nWidth="9200"/>
+    <LineBreak nWidth="9200"/>
+    <Text nLength="29" nType="POR_LAY" nHeight="276" nWidth="2766"/>
+    <LineBreak nWidth="2766"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cda128" id="19" symbol="11SwTextFrame" next="18" prev="17" upper="2" txtNodeIndex="136">
+    <infos>
+     <bounds left="8181" top="9966" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cda008" id="18" symbol="11SwTextFrame" next="21" prev="19" upper="2" txtNodeIndex="137">
+    <infos>
+     <bounds left="8181" top="10242" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Q6    <Text nLength="2" nType="POR_PARA" nHeight="276" nWidth="293"/>
+    <LineBreak nWidth="293"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cda368" id="21" symbol="11SwTextFrame" next="22" prev="18" upper="2" txtNodeIndex="138">
+    <infos>
+     <bounds left="8181" top="10518" width="9638" height="552" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="552"/>
+    </infos>
+There are no retransmissions. Retransmissions happens when a server acks for a sequence number twice. It is also possible to manually check the TCP graph for retransmission.     <Text nLength="95" nType="POR_PARA" nHeight="276" nWidth="9483"/>
+    <LineBreak nWidth="9483"/>
+    <Text nLength="79" nType="POR_LAY" nHeight="276" nWidth="7485"/>
+    <LineBreak nWidth="7485"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cda488" id="22" symbol="11SwTextFrame" next="24" prev="21" upper="2" txtNodeIndex="139">
+    <infos>
+     <bounds left="8181" top="11070" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cda6c8" id="24" symbol="11SwTextFrame" next="23" prev="22" upper="2" txtNodeIndex="140">
+    <infos>
+     <bounds left="8181" top="11346" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cda5a8" id="23" symbol="11SwTextFrame" next="25" prev="24" upper="2" txtNodeIndex="141">
+    <infos>
+     <bounds left="8181" top="11622" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Q7    <Text nLength="2" nType="POR_PARA" nHeight="276" nWidth="293"/>
+    <LineBreak nWidth="293"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cda7e8" id="25" symbol="11SwTextFrame" next="27" prev="23" upper="2" txtNodeIndex="142">
+    <infos>
+     <bounds left="8181" top="11898" width="9638" height="552" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="552"/>
+    </infos>
+At the beginning the server acks every packet and each packet is of size 1460. However, after around packet 67 we send two packets (total size 2920) but we only ack once.    <Text nLength="94" nType="POR_PARA" nHeight="276" nWidth="9033"/>
+    <LineBreak nWidth="9033"/>
+    <Text nLength="76" nType="POR_LAY" nHeight="276" nWidth="7471"/>
+    <LineBreak nWidth="7471"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cdaa28" id="27" symbol="11SwTextFrame" next="26" prev="25" upper="2" txtNodeIndex="143">
+    <infos>
+     <bounds left="8181" top="12450" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cda908" id="26" symbol="11SwTextFrame" next="28" prev="27" upper="2" txtNodeIndex="144">
+    <infos>
+     <bounds left="8181" top="12726" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Q8    <Text nLength="2" nType="POR_PARA" nHeight="276" nWidth="293"/>
+    <LineBreak nWidth="293"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cdab48" id="28" symbol="11SwTextFrame" next="29" prev="26" upper="2" txtNodeIndex="145">
+    <infos>
+     <bounds left="8181" top="13002" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+final ack 232293103    <Text nLength="19" nType="POR_PARA" nHeight="276" nWidth="1973"/>
+    <LineBreak nWidth="1973"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cdac68" id="29" symbol="11SwTextFrame" next="31" prev="28" upper="2" txtNodeIndex="146">
+    <infos>
+     <bounds left="8181" top="13278" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+first seq – 232129012    <Text nLength="21" nType="POR_PARA" nHeight="276" nWidth="2087"/>
+    <LineBreak nWidth="2087"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cdaea8" id="31" symbol="11SwTextFrame" next="30" prev="29" upper="2" txtNodeIndex="147">
+    <infos>
+     <bounds left="8181" top="13554" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+difference = 164091 (still need to minus one).     <Text nLength="47" nType="POR_PARA" nHeight="276" nWidth="4457"/>
+    <LineBreak nWidth="4457"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cdad88" id="30" symbol="11SwTextFrame" next="33" prev="31" upper="2" txtNodeIndex="148">
+    <infos>
+     <bounds left="8181" top="13830" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+data = 164090     <Text nLength="14" nType="POR_PARA" nHeight="276" nWidth="1435"/>
+    <LineBreak nWidth="1435"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce1130" id="33" symbol="11SwTextFrame" next="32" prev="30" upper="2" txtNodeIndex="149">
+    <infos>
+     <bounds left="8181" top="14106" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce1010" id="32" symbol="11SwTextFrame" next="34" prev="33" upper="2" txtNodeIndex="150">
+    <infos>
+     <bounds left="8181" top="14382" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+start time – 0.026477    <Text nLength="21" nType="POR_PARA" nHeight="276" nWidth="2040"/>
+    <LineBreak nWidth="2040"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce1250" id="34" symbol="11SwTextFrame" next="158" prev="32" upper="2" txtNodeIndex="151">
+    <infos>
+     <bounds left="8181" top="14658" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+end time – 5.455830    <Text nLength="19" nType="POR_PARA" nHeight="276" nWidth="1973"/>
+    <LineBreak nWidth="1973"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cda248" id="158" symbol="11SwTextFrame" next="36" prev="34" upper="2" txtNodeIndex="152">
+    <infos>
+     <bounds left="8181" top="14934" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+delta time = 5.429353    <Text nLength="21" nType="POR_PARA" nHeight="276" nWidth="2108"/>
+    <LineBreak nWidth="2108"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce1490" id="36" symbol="11SwTextFrame" next="35" prev="158" upper="2" txtNodeIndex="153">
+    <infos>
+     <bounds left="8181" top="15210" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce1370" id="35" symbol="11SwTextFrame" prev="36" upper="2" txtNodeIndex="154">
+    <infos>
+     <bounds left="8181" top="15486" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+thoughput = 164090/5.429353 = 30.22 K bytes thoughput.     <Text nLength="55" nType="POR_PARA" nHeight="276" nWidth="5664"/>
+    <LineBreak nWidth="5664"/>
+    <Finish/>
+   </txt>
+  </body>
+ </page>
+ <page ptr="0x7fac44f850f8" id="56" symbol="11SwPageFrame" prev="1" upper="0" lower="57">
+  <page_status ValidFlyLayout="true" ValidFlyContent="true" ValidFlyInCnt="true" ValidLayout="true" ValidContent="true"/>
+  <infos>
+   <bounds left="7047" top="17406" width="11906" height="16838" mbFixSize="true" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+   <prtBounds left="1134" top="1134" width="9638" height="14570"/>
+  </infos>
+  <body ptr="0x7fac44f870d8" id="57" symbol="11SwBodyFrame" upper="56" lower="159">
+   <infos>
+    <bounds left="8181" top="18540" width="9638" height="14570" mbFixSize="true" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+    <prtBounds left="0" top="0" width="9638" height="14570"/>
+   </infos>
+   <txt ptr="0x7fac44cc5b40" id="159" symbol="11SwTextFrame" next="63" upper="57" txtNodeIndex="155">
+    <infos>
+     <bounds left="8181" top="18540" width="9638" height="419" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="419"/>
+    </infos>
+Ex 2    <Text nLength="4" nType="POR_PARA" nHeight="419" nWidth="749"/>
+    <LineBreak nWidth="749"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8008" id="63" symbol="11SwTextFrame" next="59" prev="159" upper="57" txtNodeIndex="156">
+    <infos>
+     <bounds left="8181" top="18959" width="9638" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="120" width="9638" height="276"/>
+    </infos>
+Q1    <Text nLength="2" nType="POR_PARA" nHeight="276" nWidth="293"/>
+    <LineBreak nWidth="293"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce15b0" id="59" symbol="11SwTextFrame" next="61" prev="63" upper="57" txtNodeIndex="157">
+    <infos>
+     <bounds left="8181" top="19355" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+seq # - 2818463618    <Text nLength="18" nType="POR_PARA" nHeight="276" nWidth="1900"/>
+    <LineBreak nWidth="1900"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc5d80" id="61" symbol="11SwTextFrame" next="60" prev="59" upper="57" txtNodeIndex="158">
+    <infos>
+     <bounds left="8181" top="19631" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc5c60" id="60" symbol="11SwTextFrame" next="160" prev="61" upper="57" txtNodeIndex="159">
+    <infos>
+     <bounds left="8181" top="19907" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Q2    <Text nLength="2" nType="POR_PARA" nHeight="276" nWidth="293"/>
+    <LineBreak nWidth="293"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce16d0" id="160" symbol="11SwTextFrame" next="62" prev="60" upper="57" txtNodeIndex="160">
+    <infos>
+     <bounds left="8181" top="20183" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+seq # - 1247095790    <Text nLength="18" nType="POR_PARA" nHeight="276" nWidth="1900"/>
+    <LineBreak nWidth="1900"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc5ea0" id="62" symbol="11SwTextFrame" next="161" prev="160" upper="57" txtNodeIndex="161">
+    <infos>
+     <bounds left="8181" top="20459" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+ack # - 2818463619    <Text nLength="18" nType="POR_PARA" nHeight="276" nWidth="1913"/>
+    <LineBreak nWidth="1913"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce17f0" id="161" symbol="11SwTextFrame" next="65" prev="62" upper="57" txtNodeIndex="162">
+    <infos>
+     <bounds left="8181" top="20735" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Server determines the seq # as random and the ack # as the seq # from client + 1    <Text nLength="80" nType="POR_PARA" nHeight="276" nWidth="7706"/>
+    <LineBreak nWidth="7706"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8248" id="65" symbol="11SwTextFrame" next="64" prev="161" upper="57" txtNodeIndex="163">
+    <infos>
+     <bounds left="8181" top="21011" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8128" id="64" symbol="11SwTextFrame" next="66" prev="65" upper="57" txtNodeIndex="164">
+    <infos>
+     <bounds left="8181" top="21287" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Q3    <Text nLength="2" nType="POR_PARA" nHeight="276" nWidth="293"/>
+    <LineBreak nWidth="293"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8368" id="66" symbol="11SwTextFrame" next="166" prev="64" upper="57" txtNodeIndex="165">
+    <infos>
+     <bounds left="8181" top="21563" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+seq # - 2818463619    <Text nLength="18" nType="POR_PARA" nHeight="276" nWidth="1900"/>
+    <LineBreak nWidth="1900"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce1910" id="166" symbol="11SwTextFrame" next="167" prev="66" upper="57" txtNodeIndex="166">
+    <infos>
+     <bounds left="8181" top="21839" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+ack # - 1247095791    <Text nLength="18" nType="POR_PARA" nHeight="276" nWidth="1913"/>
+    <LineBreak nWidth="1913"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce1a30" id="167" symbol="11SwTextFrame" next="68" prev="166" upper="57" txtNodeIndex="167">
+    <infos>
+     <bounds left="8181" top="22115" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+No data    <Text nLength="7" nType="POR_PARA" nHeight="276" nWidth="753"/>
+    <LineBreak nWidth="753"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc85a8" id="68" symbol="11SwTextFrame" next="67" prev="167" upper="57" txtNodeIndex="168">
+    <infos>
+     <bounds left="8181" top="22391" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8488" id="67" symbol="11SwTextFrame" next="69" prev="68" upper="57" txtNodeIndex="169">
+    <infos>
+     <bounds left="8181" top="22667" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Q4.    <Text nLength="3" nType="POR_PARA" nHeight="276" nWidth="353"/>
+    <LineBreak nWidth="353"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc86c8" id="69" symbol="11SwTextFrame" next="169" prev="67" upper="57" txtNodeIndex="170">
+    <infos>
+     <bounds left="8181" top="22943" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Both hosts initiated the close/Fin. This is a Simultaneous close. We know this because given that     <Text nLength="98" nType="POR_PARA" nHeight="276" nWidth="9330"/>
+    <LineBreak nWidth="9330"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce1b50" id="169" symbol="11SwTextFrame" next="170" prev="69" upper="57" txtNodeIndex="171">
+    <infos>
+     <bounds left="8181" top="23219" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+F = FIN/ACK    <Text nLength="11" nType="POR_PARA" nHeight="276" nWidth="1349"/>
+    <LineBreak nWidth="1349"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc5a20" id="170" symbol="11SwTextFrame" next="171" prev="169" upper="57" txtNodeIndex="172">
+    <infos>
+     <bounds left="8181" top="23495" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+A = ACK    <Text nLength="7" nType="POR_PARA" nHeight="276" nWidth="909"/>
+    <LineBreak nWidth="909"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44ce1c70" id="171" symbol="11SwTextFrame" next="70" prev="170" upper="57" txtNodeIndex="173">
+    <infos>
+     <bounds left="8181" top="23771" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Then:    <Text nLength="5" nType="POR_PARA" nHeight="276" nWidth="560"/>
+    <LineBreak nWidth="560"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc87e8" id="70" symbol="11SwTextFrame" next="71" prev="171" upper="57" txtNodeIndex="174">
+    <infos>
+     <bounds left="8181" top="24047" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+F F A A – means that close was initiated by both hosts.         ←And this is what we see in the table    <Text nLength="101" nType="POR_PARA" nHeight="276" nWidth="9425"/>
+    <LineBreak nWidth="9425"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8908" id="71" symbol="11SwTextFrame" next="73" prev="70" upper="57" txtNodeIndex="175">
+    <infos>
+     <bounds left="8181" top="24323" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+F A F A – means that close was initiated by one host.     <Text nLength="54" nType="POR_PARA" nHeight="276" nWidth="5133"/>
+    <LineBreak nWidth="5133"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8b48" id="73" symbol="11SwTextFrame" next="72" prev="71" upper="57" txtNodeIndex="176">
+    <infos>
+     <bounds left="8181" top="24599" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8a28" id="72" symbol="11SwTextFrame" next="75" prev="73" upper="57" txtNodeIndex="177">
+    <infos>
+     <bounds left="8181" top="24875" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Q5.    <Text nLength="3" nType="POR_PARA" nHeight="276" nWidth="353"/>
+    <LineBreak nWidth="353"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8d88" id="75" symbol="11SwTextFrame" next="74" prev="72" upper="57" txtNodeIndex="178">
+    <infos>
+     <bounds left="8181" top="25151" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+server to client = 33 bytes    <Text nLength="27" nType="POR_PARA" nHeight="276" nWidth="2488"/>
+    <LineBreak nWidth="2488"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7fac44cc8c68" id="74" symbol="11SwTextFrame" prev="75" upper="57" txtNodeIndex="179">
+    <infos>
+     <bounds left="8181" top="25427" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+client to server = 40 bytes    <Text nLength="27" nType="POR_PARA" nHeight="276" nWidth="2488"/>
+    <LineBreak nWidth="2488"/>
+    <Finish/>
+   </txt>
+  </body>
+ </page>
+</root>

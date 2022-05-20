@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://www.cse.unsw.edu.au/~cs3421/17s2/assignments/ass2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Assignment 2</title>
+<link rel="stylesheet" type="text/css" href="./Assignment 2_files/style.css">
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body>
+<h1>Assignment 2 : A 3D World </h1>
+<h2> Due:  Sunday 22th Oct , 23:59:59 (The end of week 12)</h2>
+<p> Late submissions will not be accepted after midday tuesday week 13. 
+</p><h2> Demo: Week 13 </h2>
+
+
+<h2> Marks: 25 plus up to 4 Bonus Marks </h2>
+
+<!--<h2>Assignment Clarifications and Corrections </h2>-->
+
+
+
+<h2>Assignment 2 Description </h2>
+
+<p>For the second assignment you will be building a 3D world .</p>
+<p>This is an assignment you should do in pairs. Pairs should be chosen from the same tutorial class if possible. You will be performing a demo of you work in week13 during the tutorial time or the hour after. You may do the assignment individually if you choose to. 
+
+</p>
+<p>The aim of this assignment is to test:</p>
+<ul>
+<li>Your ability to work with <strong>3D transformations</strong></li>
+<li>Your ability to <strong>generate meshes</strong> from mathematical descriptions of objects.</li>
+<li>Your ability to <strong>render 3D scenes</strong> with a <strong>perspective camera</strong></li>
+<li>Your ability to use OpenGL <strong>lighting</strong></li>
+<li>Your ability to use <strong>textures</strong> and <strong>MIP mapping</strong>.</li>
+</ul>
+<p>Furthermore, the assignment is open-ended, allowing you to make additional improvements of your own choice.</p>
+<h1>Task</h1>
+<p>Your task is to complete the implementation of a 3D world. In this 
+world you control a camera moving around a landscape which includes trees, hills and roads.</p>
+<h1>Files</h1>
+<p>Download a <a href="http://www.cse.unsw.edu.au/~cs3421/17s2/assignments/ass2.zip" target="_blank">set of base classes</a> here. <span>These classes implement the basic data-structures, but are incomplete. The files provided are:</span></p>
+<ul>
+<li><strong>Game.java</strong> - this is the main entry point to your game</li>
+<li><strong>Terrain.java</strong> - this class represents variable height terrain.</li>
+<li><strong>Tree.java </strong>- this class represents a tree</li>
+<li><strong>Road.java</strong> - this class represents a road as a bezier curve</li>
+<li><strong>LevelIO.java</strong> - this class reads and writes game levels to and from JSON files.</li>
+</ul>
+<p>There is also a org.json file library for level I/O. The level files are fairly easy to read and change by hand. </p>
+<p>You are free to change any of these files as you see fit. We will not be testing individual functions. However you should make sure that the established Level IO format works for your code, because we will be testing your level with standard terrain files.</p>
+<h1>Game</h1>
+<p>This is the main class for your game. The main() method in this class will be used to test your game. It expects a single string specifying the name of the level file. If you want to specify any other parameters they should be part of the JSON file.</p>
+<h1>Terrain</h1>
+<p>The terrain is represented as a grid. The width and height of the grid are specified in the level file. Each point in the grid has a specified altitude. <strong>Your first task</strong> is to draw the terrain as a mesh of triangles with vertices at each of the grid points with the corresponding altitude.</p>
+
+<p>You can treat X,Z and altitude as OpenGL coordinates. They should all have the same scale.
+Test maps will be of the order of 10x10 to 20x20. Maximum altitudes will be in a similar range (10-20).
+
+
+</p><p>A 2x2 terrain with altitudes:</p>
+Note: the bold labels (x0,x1,z0,z1) are just to explain what
+the values mean and will not actually be part of the data
+<table class="table table-bordered" style="width: 100px;">
+<tbody>
+<tr><th> </th><th>x0</th><th>x1</th>
+</tr><tr>
+<th>z0</th><td>0</td><td>0.5</td>
+</tr>
+<tr>
+<th>z1</th>
+<td>0</td>
+<td>0.3</td>
+</tr>
+</tbody>
+</table>
+<p>A 2x2 terrain represents 4 vertices. The altitudes correspond to the Y 
+values for the x,z co-ordinates.
+
+</p><p>Will create a mesh withe the following co-ordinates</p>
+<p>
+</p><pre>   
+(0,0,0)  (1,0.5,0)   
+   +-----+  
+   |    /|  
+   |  /  |
+   |/    |
+   +-----+
+(0,0,1)  (1,0.3,1)
+</pre>
+
+
+<p>A 5x5 terrain with altitudes:</p>
+<table class="table table-bordered" style="width: 100px;">
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0.5</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0.5</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0.5</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Will create a mesh that looks like this (this may look different 
+depending on the angle/position you view it from and exactly how you set 
+up your camera). This is taken from 
+basically straight ahead at around (0,0.5,9) in world co-ordinates and 
+with a perspective camera:</p> 
+<b>Note:</b>This screenshot was taken with back face culling on
+<p><img src="./Assignment 2_files/terrainMesh.PNG"></p>
+
+
+<p>
+Note: for the assignment you will shade and texture your terrain and make it 
+look pretty. We are just showing the lines here so you can clearly see the 
+geometry. It is up to you whether you implement your terrain using 
+face nomals or vertex normals.
+
+</p><h1>Trees</h1>
+<p>The levels include trees at different points on the terrain. <strong>Your second task</strong> is to draw the trees at the specified locations.</p>
+<p>For the base version of this project, a tree should be a simple mesh with a cylidrical trunk and and a sphere of leaves. If you want you can make your 'trees' more exotic: lampposts, candy-canes, chimneys, or whatever your imagination dictates. The point is that they are placeable 3d models on the terrain. </p>
+<p>Note that the level descriptions only specify the (x,z) location of the tree. You will need to use the terrain data to calculate the altitude of the tree and draw it appropriately. Trees are not guaranteed to be positioned at grid points, so you will need to interpolate altitude values if a tree is in the middle of a triangle.</p>
+<h1>Road</h1>
+<p>The level include roads. Each road is described as a 2D Bezier curve. I have provided a function for you which calculates the (x,z) location of points along the road. <strong>Your third task</strong> is to use this function to extrude a road which follows this curve, with the width specified in the constructor.</p>
+<p>You can assume, for the base portion of the assignment, the roads will only run over <strong>flat terrain</strong>, so you will not have to handle going up or down hills.</p>
+<h1>Camera</h1>
+<p>You should implement a 3D camera which <strong>moves</strong> around the scene using the arrow keys (ie. the camera's position changes with respect to the world):</p>
+<ul>
+<li>The up arrow moves the camera forward (in the current direction)</li>
+<li>The down arrow moves the camera backward (relative to the current direction)</li>
+<li>The left arrow turns(rotates) left (ie changes the direction that the camera is facing)</li>
+<li>The right arrow turns(rotates) right (ie changes the direction that the camera is facing).</li>
+</ul>
+<p>The camera should move up and down <strong>following the terrain</strong>. So if you move it forward up a hill, the camera should move up the hill and not go through it! (Note: it is ok for the camera to go through trees and other objects for this assignment).</p>
+<p>The camera should be a <strong>3D perspective</strong> camera with a reasonable field of view. The aspect ratio should <strong>match the aspect ratio</strong> of the viewport.</p>
+<h1>Lighting</h1>
+<p>You should render the scene with appropriate <strong>materials and lights</strong>. In the base version you should at least have a single light source representing the sun. The terrain, trees and road should all have suitable materials.</p>
+<p>The level files include a "sunlight" field which is a 3D vector 
+specifying a directional light to be included in the scene. The vector 
+represents the direction <b>to</b> the source of the light.
+
+</p>
+<h1>Texturing</h1>
+<p>You should <strong>texture</strong> all the models (terrain, road, trees,avatar,others) in the scene, using <strong>MIP maps</strong> to handle minification. You may use whatever textures you feel suitable. Be creative. Make everything look like Lego or an ice sculpture or origami.</p>
+
+<h1>Avatar</h1>
+Add an avatar and make the camera follow behind the avatar in a 3rd person view. You should being able to switch from 1st person (with no avatar) to 3rd person (with the avatar) by pressing a key of your choice. For the base part the avatar does not need to be a complex model (a glut teapot is ok).
+
+<h1>The Other/s</h1>
+You should extend the scene level language to include the location/s of an enemy/ally/wild beast etc. You must use VBOs instead of immediate mode for these models and use a vertex and fragment shader to render them. 
+
+<h1>Extensions </h1>
+<p>The base elements described above are worth 19 of the 25 marks. For the remaining 6 marks you can choose among the following extensions:</p>
+<ul>
+<li>
+Build a complex model or a model with walking animation or something beautiful or interesting for your avatar or your others! (2..4 marks)
+</li>
+<li>Write the whole assignment using VBOs and shaders. (3 marks) </li>
+<li>Add a 'night' mode with low ambient lighting. Give the player a torch which shines in the direction they are facing. (2 marks)</li>
+<li>Make the sun move and change colour according to the time of day (2 marks)</li>
+<li>Add rain using particle effects (4 marks)
+<p>For the full marks this would need to include alpha
+blended billboarded particles, creation and destruction
+,some kind of evolution over time (position, size, colour, as is appropriate for your kind of particles).
+
+</p></li>
+<li>Add ponds with animated textures to your world (4 marks)
+<p>Ponds need only lie on flat terrain like roads but should include animated textures showing ripples or waves.
+</p></li><li>Add an L-system for fractal tree generation (4 marks)
+<p>To get full marks for this you would need to implement a proper 
+rewite system. You would not need to load 
+the grammar for the L-system from JSON, but it
+should be possible to alter the grammar just by changing values in
+the code. 
+</p><p>
+You should also provide a way to increase/ decrease the number 
+of iterations either interactively or from reading in the number of 
+iterations from a json file. By default you should set it to the number of iterations that looks 
+best/runs best. It does not matter if the tree does not look as good when 
+iterations are increased/decreased. It is also ok if 
+performance drops for high numbers of iterations. This is to be expected.
+</p></li>
+<li>Fix road extrusion so roads can go up and down hills (4 marks).</li>
+<li>Add shadows to the trees and terrain (4 marks)</li>
+<li>Add shaders to implement normal mapping on one of your models(4 marks)</li>
+<li>Add reflection mapping (using cube mapping) to one of your models  (4 marks)</li>
+<li>Add shaders to implement NPR shading (2..6 marks)</li>
+
+<li>Add level-of-detail support for rendering distant objects with lower-resolution models (2..6 marks)</li>
+<li>BSP trees for hidden surface removal for terrain rendering (8 marks)</li>
+<li>Add <a href="https://en.wikipedia.org/wiki/Portal_(video_game)">Portal style portals. </a>
+  <p>
+  </p><ul>
+    <li>Portals you can walk through (4 marks) </li>
+    <li>Portals you can walk and see through (8 marks)</li> 
+  </ul>
+</li><li>Implement the terrain as Bezier or NURBS surfaces (8 marks)</li>
+</ul>
+<p>If you have other ideas for extensions please ask on the forum. If there are any I like, I will add them to the list. I'm looking for extensions which test your use of different rendering techniques rather than just adding more stuff to the world.</p>
+<p><strong>Note: </strong>The marks above increase roughly logarithmically with the amount of work required. So a task worth 6 marks is about 16 times harder than a task worth 2 marks.</p>
+<h1>Marking</h1>
+<p>This assignment is worth 25% of your final mark. Marks are assigned as follows:</p>
+<table class="table" style="width: 500px;">
+<thead>
+<tr>
+<th scope="col">Item</th>
+<th scope="col">Marks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Terrain - mesh generation</td><td>2</td>
+
+</tr>
+<tr>
+<td>Terrain - interpolating altitudes</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Trees - mesh generation</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Road - mesh generation</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Camera - perspective projection</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Camera - movement</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Lighting&nbsp;</td>
+<td>2</td> 
+</tr>
+<tr>
+<td>Textures</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Avatar</td>
+<td>2</td>
+</tr>
+<tr>
+<td>The others</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>The extension element includes <strong>4 bonus marks</strong>, so the maximum possible mark is 29/25.</p>
+<p><strong>Marks beyond 25</strong> will only be awarded if all the base 
+components work appropriately. You can not make up for marks lost in the core 
+component with marks from the extension component. For example, if you lose 2 
+marks in the core component, the most you can get is 23/25.
+</p> 
+
+<h1>Submission</h1>
+<p>Submit a <strong>single JAR file</strong> containing all your Java source and any addition files needed to make your project work.</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>The main entry point to your game should be the <strong>Game.main() 
+</strong>method. This method is expected to take the name of a level file and play that level. Any additional parameters should be incorporated into the level file.</li>
+<li>Your game will be tested on some <strong>standard level files</strong>, so you should support the provided file format.</li>
+<li>You should include <strong>additional level files</strong> which demonstrate any particular extensions you have implemented.</li>
+<li>You should include a <strong>README </strong>text file explaining what extensions you have implemented and where they can be found it the code.</li>
+<li>You should <strong>comment your code</strong> thoroughly so your marker can understand what you have implemented and how it works.</li>
+</ul>
+<p>Submit your JAR file using CSE give, either using webcms or the command line:</p>
+<pre>% give cs3421 ass2 Ass2.jar</pre>
+
+
+<p>Late submissions will lose 2.5 marks per day from the maximum possible mark.</p>
+<b>
+</b><p><b> Submissions will not be accepted after midday tuesday week 13. </b>
+</p><h1>Example world</h1>
+<p>Sample world file: Test 1</p>
+<pre class="prettyprint linenums">{
+    "width" : 10,
+	"depth" : 10,
+
+	"sunlight" : [ -1, 1, 0 ],
+
+	"altitude" : [
+	    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	    0, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	    0, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	    0, 1, 1, 2, 2, 2, 2, 1, 1, 0,
+	    0, 1, 1, 2, 3, 3, 2, 1, 1, 0,
+	    0, 1, 1, 2, 3, 3, 2, 1, 1, 0,
+	    0, 1, 1, 2, 2, 2, 2, 1, 1, 0,
+	    0, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	    0, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	],
+	
+	"trees" : [
+		{
+			"x" : 1.5,
+			"z" : 1.5
+		},
+		{
+			"x" : 4.5,
+			"z" : 4.5
+		}
+	],
+	
+	"roads" : [
+		{
+			"width" : 3,
+			"spine": [
+				1.5, 3,
+				1.5, 0.5,
+				7.5, 1.5,
+				7.5, 1.5
+			]			
+		}
+	]
+	
+}
+</pre>
+<li>The screenshot <p><img src="./Assignment 2_files/test1.PNG" width="50%">
+</p><p>is the shot of Test 1. The road goes over the edges of the terrain. </p></li>
+<p>You can see more examples <a href="https://www.cse.unsw.edu.au/~cs3421/17s2/assignments/ass2Screenshots.html" target="_blank">here</a>.</p>
+
+</body><div></div></html>

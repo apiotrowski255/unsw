@@ -1,0 +1,524 @@
+<?xml version="1.0"?>
+<root ptr="0x55ee496a78b0" id="4" symbol="11SwRootFrame" lower="5">
+ <sfxViewShells>
+  <SwView>
+   <SfxViewShell ptr="0x55ee4980b3b0" id="1"/>
+   <SwCursorShell>
+    <SwViewShell/>
+    <m_pCurrentCursor>
+     <SwPaM>
+      <point>
+       <SwPosition nNode="9" nContent="0"/>
+      </point>
+     </SwPaM>
+    </m_pCurrentCursor>
+   </SwCursorShell>
+  </SwView>
+ </sfxViewShells>
+ <infos>
+  <bounds left="284" top="284" width="18669" height="33960" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+  <prtBounds left="0" top="0" width="18669" height="33960"/>
+ </infos>
+ <page ptr="0x7f24e401d0f8" id="5" symbol="11SwPageFrame" next="44" upper="4" lower="6">
+  <page_status ValidFlyLayout="true" ValidFlyContent="true" ValidFlyInCnt="true" ValidLayout="true" ValidContent="true"/>
+  <infos>
+   <bounds left="7047" top="284" width="11906" height="16838" mbFixSize="true" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+   <prtBounds left="1134" top="1134" width="9638" height="14570"/>
+  </infos>
+  <body ptr="0x7f24e401f0d8" id="6" symbol="11SwBodyFrame" upper="5" lower="7">
+   <infos>
+    <bounds left="8181" top="1418" width="9638" height="14570" mbFixSize="true" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+    <prtBounds left="0" top="0" width="9638" height="14570"/>
+   </infos>
+   <txt ptr="0x7f24e4020120" id="7" symbol="11SwTextFrame" next="8" upper="6" txtNodeIndex="9">
+    <infos>
+     <bounds left="8181" top="1418" width="9638" height="1078" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="240" width="9638" height="838"/>
+    </infos>
+Exercise 3: Using Wireshark to understand basic HTTP request/response messages.    <Text nLength="53" nType="POR_PARA" nHeight="419" nWidth="9600"/>
+    <LineBreak nWidth="9600"/>
+    <Text nLength="26" nType="POR_LAY" nHeight="419" nWidth="4998"/>
+    <LineBreak nWidth="4998"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e4020240" id="8" symbol="11SwTextFrame" next="9" prev="7" upper="6" txtNodeIndex="10">
+    <infos>
+     <bounds left="8181" top="2496" width="9638" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="120" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e4020360" id="9" symbol="11SwTextFrame" next="10" prev="8" upper="6" txtNodeIndex="11">
+    <infos>
+     <bounds left="8181" top="2892" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Question 1: What is the status code and phrase returned from the server to the client browser?    <Text nLength="94" nType="POR_PARA" nHeight="276" nWidth="8992"/>
+    <LineBreak nWidth="8992"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e4020480" id="10" symbol="11SwTextFrame" next="11" prev="9" upper="6" txtNodeIndex="12">
+    <infos>
+     <bounds left="8181" top="3168" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Status code: 200    <Text nLength="16" nType="POR_PARA" nHeight="276" nWidth="1586"/>
+    <LineBreak nWidth="1586"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e40205a0" id="11" symbol="11SwTextFrame" next="12" prev="10" upper="6" txtNodeIndex="13">
+    <infos>
+     <bounds left="8181" top="3444" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Phrase: OK    <Text nLength="10" nType="POR_PARA" nHeight="276" nWidth="1113"/>
+    <LineBreak nWidth="1113"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e40206c0" id="12" symbol="11SwTextFrame" next="13" prev="11" upper="6" txtNodeIndex="14">
+    <infos>
+     <bounds left="8181" top="3720" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e40207e0" id="13" symbol="11SwTextFrame" next="14" prev="12" upper="6" txtNodeIndex="15">
+    <infos>
+     <bounds left="8181" top="3996" width="9638" height="552" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="552"/>
+    </infos>
+Question 2: When was the HTML file that the browser is retrieving last modified at the server? Does the response also contain a DATE header? How are these two fields different?     <Text nLength="95" nType="POR_PARA" nHeight="276" nWidth="9177"/>
+    <LineBreak nWidth="9177"/>
+    <Text nLength="82" nType="POR_LAY" nHeight="276" nWidth="8099"/>
+    <LineBreak nWidth="8099"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e4020900" id="14" symbol="11SwTextFrame" next="15" prev="13" upper="6" txtNodeIndex="16">
+    <infos>
+     <bounds left="8181" top="4548" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Date: Tue, 23 Sep 2003 05:29:50 GMT    <Text nLength="35" nType="POR_PARA" nHeight="276" nWidth="3767"/>
+    <LineBreak nWidth="3767"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e4020a20" id="15" symbol="11SwTextFrame" next="16" prev="14" upper="6" txtNodeIndex="17">
+    <infos>
+     <bounds left="8181" top="4824" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Last-Modified: Tue, 23 Sep 2003 05:29:00 GMT    <Text nLength="44" nType="POR_PARA" nHeight="276" nWidth="4700"/>
+    <LineBreak nWidth="4700"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e4020b40" id="16" symbol="11SwTextFrame" next="17" prev="15" upper="6" txtNodeIndex="18">
+    <infos>
+     <bounds left="8181" top="5100" width="9638" height="828" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="828"/>
+    </infos>
+The Date field is a general-type header used to pass additional information with HTTP response or HTTP request. It is the time the server replied to the client. While the Last-Modified field is sent by the server specifying the date of the last modification of the requested source.    <Text nLength="98" nType="POR_PARA" nHeight="276" nWidth="9521"/>
+    <LineBreak nWidth="9521"/>
+    <Text nLength="104" nType="POR_LAY" nHeight="276" nWidth="9617"/>
+    <LineBreak nWidth="9617"/>
+    <Text nLength="80" nType="POR_LAY" nHeight="276" nWidth="7444"/>
+    <LineBreak nWidth="7444"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e4020c60" id="17" symbol="11SwTextFrame" next="18" prev="16" upper="6" txtNodeIndex="19">
+    <infos>
+     <bounds left="8181" top="5928" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e4020d80" id="18" symbol="11SwTextFrame" next="19" prev="17" upper="6" txtNodeIndex="20">
+    <infos>
+     <bounds left="8181" top="6204" width="9638" height="552" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="552"/>
+    </infos>
+Question 3: Is the connection established between the browser and the server persistent or non-persistent? How can you infer this?     <Text nLength="95" nType="POR_PARA" nHeight="276" nWidth="9130"/>
+    <LineBreak nWidth="9130"/>
+    <Text nLength="36" nType="POR_LAY" nHeight="276" nWidth="3452"/>
+    <LineBreak nWidth="3452"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e4020ea0" id="19" symbol="11SwTextFrame" next="20" prev="18" upper="6" txtNodeIndex="21">
+    <infos>
+     <bounds left="8181" top="6756" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Persistent. Http is version 1.1    <Text nLength="31" nType="POR_PARA" nHeight="276" nWidth="2826"/>
+    <LineBreak nWidth="2826"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67de008" id="20" symbol="11SwTextFrame" next="21" prev="19" upper="6" txtNodeIndex="22">
+    <infos>
+     <bounds left="8181" top="7032" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67de128" id="21" symbol="11SwTextFrame" next="22" prev="20" upper="6" txtNodeIndex="23">
+    <infos>
+     <bounds left="8181" top="7308" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Question 4: How many bytes of content are being returned to the browser?     <Text nLength="73" nType="POR_PARA" nHeight="276" nWidth="7231"/>
+    <LineBreak nWidth="7231"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67de248" id="22" symbol="11SwTextFrame" next="23" prev="21" upper="6" txtNodeIndex="24">
+    <infos>
+     <bounds left="8181" top="7584" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+73 bytes.    <Text nLength="9" nType="POR_PARA" nHeight="276" nWidth="867"/>
+    <LineBreak nWidth="867"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67de368" id="23" symbol="11SwTextFrame" next="24" prev="22" upper="6" txtNodeIndex="25">
+    <infos>
+     <bounds left="8181" top="7860" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67de488" id="24" symbol="11SwTextFrame" next="25" prev="23" upper="6" txtNodeIndex="26">
+    <infos>
+     <bounds left="8181" top="8136" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+Question 5: What is the data contained inside the HTTP response packet?     <Text nLength="72" nType="POR_PARA" nHeight="276" nWidth="7104"/>
+    <LineBreak nWidth="7104"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67de5a8" id="25" symbol="11SwTextFrame" next="26" prev="24" upper="6" txtNodeIndex="27">
+    <infos>
+     <bounds left="8181" top="8412" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+&lt;html&gt;\n    <Text nLength="8" nType="POR_PARA" nHeight="276" nWidth="897"/>
+    <LineBreak nWidth="897"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67de6c8" id="26" symbol="11SwTextFrame" next="27" prev="25" upper="6" txtNodeIndex="28">
+    <infos>
+     <bounds left="8181" top="8688" width="9638" height="552" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="552"/>
+    </infos>
+Congratulations. You've downloaded the file http://gaia.cs.umass.edu/ethereal-labs/HTTP-ethereal-file1.html! \n    <Text nLength="97" nType="POR_PARA" nHeight="276" nWidth="9507"/>
+    <LineBreak nWidth="9507"/>
+    <Text nLength="14" nType="POR_LAY" nHeight="276" nWidth="1267"/>
+    <LineBreak nWidth="1267"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67de7e8" id="27" symbol="11SwTextFrame" next="28" prev="26" upper="6" txtNodeIndex="29">
+    <infos>
+     <bounds left="8181" top="9240" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+&lt;/html&gt;\n    <Text nLength="9" nType="POR_PARA" nHeight="276" nWidth="964"/>
+    <LineBreak nWidth="964"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67de908" id="28" symbol="11SwTextFrame" next="29" prev="27" upper="6" txtNodeIndex="30">
+    <infos>
+     <bounds left="8181" top="9516" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67dea28" id="29" symbol="11SwTextFrame" next="30" prev="28" upper="6" txtNodeIndex="31">
+    <infos>
+     <bounds left="8181" top="9792" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67deb48" id="30" symbol="11SwTextFrame" next="31" prev="29" upper="6" txtNodeIndex="32">
+    <infos>
+     <bounds left="8181" top="10068" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67dec68" id="31" symbol="11SwTextFrame" next="32" prev="30" upper="6" txtNodeIndex="33">
+    <infos>
+     <bounds left="8181" top="10344" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67ded88" id="32" symbol="11SwTextFrame" next="33" prev="31" upper="6" txtNodeIndex="34">
+    <infos>
+     <bounds left="8181" top="10620" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67deea8" id="33" symbol="11SwTextFrame" next="34" prev="32" upper="6" txtNodeIndex="35">
+    <infos>
+     <bounds left="8181" top="10896" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67df010" id="34" symbol="11SwTextFrame" next="35" prev="33" upper="6" txtNodeIndex="36">
+    <infos>
+     <bounds left="8181" top="11172" width="9638" height="276" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67df130" id="35" symbol="11SwTextFrame" next="36" prev="34" upper="6" txtNodeIndex="37">
+    <infos>
+     <bounds left="8181" top="11448" width="9638" height="1078" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="240" width="9638" height="838"/>
+    </infos>
+Exercise 4: Using Wireshark to understand the HTTP CONDITIONAL GET/response interaction    <Text nLength="51" nType="POR_PARA" nHeight="419" nWidth="9215"/>
+    <LineBreak nWidth="9215"/>
+    <Text nLength="36" nType="POR_LAY" nHeight="419" nWidth="7052"/>
+    <LineBreak nWidth="7052"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67df250" id="36" symbol="11SwTextFrame" next="37" prev="35" upper="6" txtNodeIndex="38">
+    <infos>
+     <bounds left="8181" top="12526" width="9638" height="396" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="120" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67df370" id="37" symbol="11SwTextFrame" next="38" prev="36" upper="6" txtNodeIndex="39">
+    <infos>
+     <bounds left="8181" top="12922" width="9638" height="774" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="593"/>
+    </infos>
+Question 1: Inspect the contents of the first HTTP GET request from the browser to the server. Do you see an ?IF-MODIFIED-SINCE? line in the HTTP GET?    <Text nLength="98" nType="POR_PARA" nHeight="276" nWidth="9485"/>
+    <LineBreak nWidth="9485"/>
+    <Text nLength="52" nType="POR_LAY" nHeight="276" nWidth="5830"/>
+    <LineBreak nWidth="5830"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67df490" id="38" symbol="11SwTextFrame" next="39" prev="37" upper="6" txtNodeIndex="40">
+    <infos>
+     <bounds left="8181" top="13696" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+No.    <Text nLength="3" nType="POR_PARA" nHeight="276" nWidth="353"/>
+    <LineBreak nWidth="353"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67df5b0" id="39" symbol="11SwTextFrame" next="40" prev="38" upper="6" txtNodeIndex="41">
+    <infos>
+     <bounds left="8181" top="14153" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67df6d0" id="40" symbol="11SwTextFrame" next="41" prev="39" upper="6" txtNodeIndex="42">
+    <infos>
+     <bounds left="8181" top="14610" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+Question 2: Does the response indicate the last time that the requested file was modified?     <Text nLength="91" nType="POR_PARA" nHeight="276" nWidth="8630"/>
+    <LineBreak nWidth="8630"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67df7f0" id="41" symbol="11SwTextFrame" next="42" prev="40" upper="6" txtNodeIndex="43">
+    <infos>
+     <bounds left="8181" top="15067" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+Yes. Last-Modified: Tue, 23 Sep 2003 05:35:00 GMT    <Text nLength="49" nType="POR_PARA" nHeight="276" nWidth="5169"/>
+    <LineBreak nWidth="5169"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67df910" id="42" symbol="11SwTextFrame" prev="41" upper="6" txtNodeIndex="44">
+    <infos>
+     <bounds left="8181" top="15524" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+  </body>
+ </page>
+ <page ptr="0x7f24e401d1f0" id="44" symbol="11SwPageFrame" prev="5" upper="4" lower="45">
+  <page_status ValidFlyLayout="true" ValidFlyContent="true" ValidFlyInCnt="true" ValidLayout="true" ValidContent="true"/>
+  <infos>
+   <bounds left="7047" top="17406" width="11906" height="16838" mbFixSize="true" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+   <prtBounds left="1134" top="1134" width="9638" height="14570"/>
+  </infos>
+  <body ptr="0x7f24e401f1b0" id="45" symbol="11SwBodyFrame" upper="44" lower="43">
+   <infos>
+    <bounds left="8181" top="18540" width="9638" height="14570" mbFixSize="true" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+    <prtBounds left="0" top="0" width="9638" height="14570"/>
+   </infos>
+   <txt ptr="0x7f24e67dfa30" id="43" symbol="11SwTextFrame" next="46" upper="45" txtNodeIndex="45">
+    <infos>
+     <bounds left="8181" top="18540" width="9638" height="910" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="0" width="9638" height="910"/>
+    </infos>
+Question 3: Now inspect the contents of the second HTTP GET request from the browser to the server. Do you see an ?IF-MODIFIED-SINCE:? and ?IF-NONE-MATCH? lines in the HTTP GET? If so, what information is contained in these header lines?     <Text nLength="92" nType="POR_PARA" nHeight="276" nWidth="9231"/>
+    <LineBreak nWidth="9231"/>
+    <Text nLength="85" nType="POR_TXT" nHeight="276" nWidth="9596"/>
+    <Text nLength="1" nType="POR_HOLE"/>
+    <LineBreak nWidth="9596"/>
+    <Text nLength="60" nType="POR_LAY" nHeight="276" nWidth="5605"/>
+    <LineBreak nWidth="5605"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67dfb50" id="46" symbol="11SwTextFrame" next="47" prev="43" upper="45" txtNodeIndex="46">
+    <infos>
+     <bounds left="8181" top="19450" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+Yes.    <Text nLength="4" nType="POR_PARA" nHeight="276" nWidth="409"/>
+    <LineBreak nWidth="409"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67dfc70" id="47" symbol="11SwTextFrame" next="48" prev="46" upper="45" txtNodeIndex="47">
+    <infos>
+     <bounds left="8181" top="19907" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+If-Modified-Since: Tue, 23 Sep 2003 05:35:00 GMT    <Text nLength="48" nType="POR_PARA" nHeight="276" nWidth="5060"/>
+    <LineBreak nWidth="5060"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67dfd90" id="48" symbol="11SwTextFrame" next="49" prev="47" upper="45" txtNodeIndex="48">
+    <infos>
+     <bounds left="8181" top="20364" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+If-None-Match: &quot;1bfef-173-8f4ae900&quot;    <Text nLength="35" nType="POR_PARA" nHeight="276" nWidth="3695"/>
+    <LineBreak nWidth="3695"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67dfeb0" id="49" symbol="11SwTextFrame" next="50" prev="48" upper="45" txtNodeIndex="49">
+    <infos>
+     <bounds left="8181" top="20821" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e0000" id="50" symbol="11SwTextFrame" next="51" prev="49" upper="45" txtNodeIndex="50">
+    <infos>
+     <bounds left="8181" top="21278" width="9638" height="774" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="593"/>
+    </infos>
+Question 4: What is the HTTP status code and phrase returned from the server in response to this second HTTP GET? Did the server explicitly return the contents of the file? Explain.     <Text nLength="97" nType="POR_PARA" nHeight="276" nWidth="9371"/>
+    <LineBreak nWidth="9371"/>
+    <Text nLength="85" nType="POR_LAY" nHeight="276" nWidth="8209"/>
+    <LineBreak nWidth="8209"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e0120" id="51" symbol="11SwTextFrame" next="52" prev="50" upper="45" txtNodeIndex="51">
+    <infos>
+     <bounds left="8181" top="22052" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+Status code: 304    <Text nLength="16" nType="POR_PARA" nHeight="276" nWidth="1586"/>
+    <LineBreak nWidth="1586"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e0240" id="52" symbol="11SwTextFrame" next="53" prev="51" upper="45" txtNodeIndex="52">
+    <infos>
+     <bounds left="8181" top="22509" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+phrase: Not Modified    <Text nLength="20" nType="POR_PARA" nHeight="276" nWidth="2066"/>
+    <LineBreak nWidth="2066"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e0360" id="53" symbol="11SwTextFrame" next="54" prev="52" upper="45" txtNodeIndex="53">
+    <infos>
+     <bounds left="8181" top="22966" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+The Server did not explicitly return the contents of the file.     <Text nLength="63" nType="POR_PARA" nHeight="276" nWidth="5718"/>
+    <LineBreak nWidth="5718"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e0480" id="54" symbol="11SwTextFrame" next="55" prev="53" upper="45" txtNodeIndex="54">
+    <infos>
+     <bounds left="8181" top="23423" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e05a0" id="55" symbol="11SwTextFrame" next="56" prev="54" upper="45" txtNodeIndex="55">
+    <infos>
+     <bounds left="8181" top="23880" width="9638" height="774" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="593"/>
+    </infos>
+Question 5: What is the value of the Etag field in the 2nd response message and how it is used? Has this value changed since the 1 st response message was received?     <Text nLength="99" nType="POR_TXT" nHeight="276" nWidth="9579"/>
+    <Text nLength="1" nType="POR_HOLE"/>
+    <LineBreak nWidth="9579"/>
+    <Text nLength="65" nType="POR_LAY" nHeight="276" nWidth="6337"/>
+    <LineBreak nWidth="6337"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e06c0" id="56" symbol="11SwTextFrame" next="57" prev="55" upper="45" txtNodeIndex="56">
+    <infos>
+     <bounds left="8181" top="24654" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+ETag: &quot;1bfef-173-8f4ae900&quot;    <Text nLength="26" nType="POR_PARA" nHeight="276" nWidth="2745"/>
+    <LineBreak nWidth="2745"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e07e0" id="57" symbol="11SwTextFrame" next="58" prev="56" upper="45" txtNodeIndex="57">
+    <infos>
+     <bounds left="8181" top="25111" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+Etag is a response-type header used as an identifier for a specific version of a resource.    <Text nLength="90" nType="POR_PARA" nHeight="276" nWidth="8343"/>
+    <LineBreak nWidth="8343"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e0900" id="58" symbol="11SwTextFrame" next="59" prev="57" upper="45" txtNodeIndex="58">
+    <infos>
+     <bounds left="8181" top="25568" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+This value has not changed since the 1st response.     <Text nLength="38" nType="POR_TXT" nHeight="276" nWidth="3699"/>
+    <Text nLength="2" nType="POR_TXT" nHeight="276" nWidth="93"/>
+    <Text nLength="11" nType="POR_TXT" nHeight="276" nWidth="1020"/>
+    <LineBreak nWidth="4812"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e0a20" id="59" symbol="11SwTextFrame" next="60" prev="58" upper="45" txtNodeIndex="59">
+    <infos>
+     <bounds left="8181" top="26025" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e0b40" id="60" symbol="11SwTextFrame" next="61" prev="59" upper="45" txtNodeIndex="60">
+    <infos>
+     <bounds left="8181" top="26482" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+Exercise 5:    <Text nLength="11" nType="POR_PARA" nHeight="276" nWidth="1122"/>
+    <LineBreak nWidth="1122"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e0c60" id="61" symbol="11SwTextFrame" next="62" prev="60" upper="45" txtNodeIndex="61">
+    <infos>
+     <bounds left="8181" top="26939" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+See java code attached.    <Text nLength="23" nType="POR_PARA" nHeight="276" nWidth="2239"/>
+    <LineBreak nWidth="2239"/>
+    <Finish/>
+   </txt>
+   <txt ptr="0x7f24e67e0d80" id="62" symbol="11SwTextFrame" prev="61" upper="45" txtNodeIndex="62">
+    <infos>
+     <bounds left="8181" top="27396" width="9638" height="457" mbFixSize="false" mbValidPos="true" mbValidSize="true" mbValidPrtArea="true"/>
+     <prtBounds left="0" top="181" width="9638" height="276"/>
+    </infos>
+    <Finish/>
+   </txt>
+  </body>
+ </page>
+</root>

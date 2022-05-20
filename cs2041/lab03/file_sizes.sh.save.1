@@ -1,0 +1,29 @@
+#!/bin/sh
+input=`ls -l`
+
+i=7  #contains the size
+j=11 #contains the name
+while test $i -lt 250
+do
+	name4=`echo $input | cut -d" " -f$i`
+	if [ "$name4" == "" ]
+	then
+		i=999
+	else
+		`echo $input | cut -d" " -f$i`
+		name=`echo $input | cut -d" " -f$j`
+		if [ "$size" -lt 100 ]
+		then
+			echo "small"
+		fi
+		i=$(($i + 9))
+		j=$(($j + 9))
+	fi
+done
+
+echo -n "Small files:"
+#echo small files 
+echo -n "Medium-sized files:"
+#echo medium files
+echo -n "Large files:"
+#echo large files

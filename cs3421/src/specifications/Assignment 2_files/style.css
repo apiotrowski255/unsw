@@ -1,0 +1,24 @@
+body {font-size:12pt;font-family:arial,sans-serif;margin:20px 20px;}
+a {color:#3333FF;text-decoration:none;}
+a[href]:hover {color:#CC0000;background:#FFFFCC;}
+h2 {color:black;}
+small {font-size:75%}
+pre {background:#EEEEFF;border:thin solid #9999CC;margin:5px 20px 5px 20px;padding:4px 8px;}
+warn {color:#CC0000;font-weight:bold;}
+span.toggle {font-size:67%;}
+span.notice {font-size:110%;}
+span.tiny {font-size:x-small;}
+span.heading {font-size:18pt;font-weight:bold;color:#6699FF;}
+span.marks {font-weight:normal;font-size:75%;}
+span.identifier {color:#993300;font-size:110%;font-weight:bold;font-family:courier;}
+tr.heading {font-size:large;font-weight:bold;background-color:#6699FF;}
+table{border:1px solid black;}
+th,td{padding: 15px;}
+table.note {border:thin solid black;padding:2pt;width:75%}
+td { font-size:10pt; }
+div.note {border:thin solid black;font-size:90%;margin:5px 50px 5px 30px;padding:4px 8px;}
+.red {color:#CC0000;}
+.green {color:#006600;}
+.brown {color:#993300;}
+.comment {font-size:90%;color:#666666}
+li {padding-bottom: 1em;}

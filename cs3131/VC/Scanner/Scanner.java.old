@@ -1,0 +1,277 @@
+/*
+ *
+ *	Scanner.java                        
+ *
+ */
+
+package VC.Scanner;
+
+import VC.ErrorReporter;
+
+public final class Scanner { 
+
+    private SourceFile sourceFile;
+    private boolean debug;
+
+    private ErrorReporter errorReporter;
+    private StringBuffer currentSpelling;
+    private char currentChar, nextChar;
+    private SourcePosition sourcePos;
+    
+    private int lineCounter, columnCounter, currentCharCounter;
+
+// =========================================================
+
+    public Scanner(SourceFile source, ErrorReporter reporter) {
+        sourceFile = source;
+        errorReporter = reporter;
+        currentChar = sourceFile.getNextChar();
+        //nextChar = sourceFile.getNextChar();
+        debug = false;
+
+        // you may initialise your counters for line and column numbers here
+    
+        int lineCounter = 1;
+        int columnCounter = 1;
+        int currentCharCounter = 0;
+    }
+
+  public void enableDebugging() {
+    debug = true;
+  }
+
+  // accept gets the next character from the source program.
+
+    private void accept() {
+
+        currentChar = sourceFile.getNextChar();
+        //nextChar = sourceFile.getNextChar();
+
+  // you may save the lexeme of the current token incrementally here
+  // you may also increment your line and column counters here
+  
+        this.currentCharCounter += 1;
+    }
+
+  // inspectChar returns the n-th character after currentChar
+  // in the input stream. 
+  //
+  // If there are fewer than nthChar characters between currentChar 
+  // and the end of file marker, SourceFile.eof is returned.
+  // 
+  // Both currentChar and the current position in the input stream
+  // are *not* changed. Therefore, a subsequent call to accept()
+  // will always return the next char after currentChar.
+
+  private char inspectChar(int nthChar) {
+    return sourceFile.inspectChar(nthChar);
+  }
+
+  private int nextToken() {
+  // Tokens: separators, operators, literals, identifiers and keywords
+       
+    switch (currentChar) {
+       // separators 
+    case '(':
+	      accept();
+	      return Token.LPAREN;
+    case '.':
+        //  attempting to recognise a float
+
+    case '|':	
+       	accept();
+      	if (currentChar == '|') {
+            accept();
+	         return Token.OROR;
+      	} else {
+	         return Token.ERROR;
+        }
+
+    case '*':
+         accept();
+         return Token.MULT;
+    case SourceFile.eof:	
+	      currentSpelling.append(Token.spell(Token.EOF));
+	      return Token.EOF;
+    default:
+	      break;
+    }
+
+    accept(); 
+    return Token.ERROR;
+  }
+
+  void skipSpaceAndComments() {
+  // TODO
+  // if a line starts with a "//" then we can skip the entire line 
+  // or we can treat // like a /n
+  
+  }
+
+   public Token getToken() {
+      Token tok;
+      int kind;
+
+    // skip white space and comments
+
+    skipSpaceAndComments();
+
+    currentSpelling = new StringBuffer("");
+
+    sourcePos = new SourcePosition();
+
+    constructLine();
+    print(currentSpelling.toString());
+    String[] words = breakLineToTokens();
+    
+    for (String s : words){
+      if (s.length() > 1){
+         // Could be a keyword, literal etc.
+         if (stringMatchesSlashSlash(s)){
+            lineCounter++;
+            break;
+         }
+         
+         if (stringContainsOnlyNumbers(s)){
+            print("yay");
+         }
+         
+         print(s);
+      } else {
+         // This is the case where length of word is 1
+      
+      }
+    }
+    //currentSpelling.append(currentChar);
+    //int ascii = (int) currentChar;
+    //System.out.println(ascii);
+    //currentSpelling.append(currentChar);
+    kind = nextToken();
+    
+    // System.out.println(kind);
+    // constructWord();
+    // int ascii = (int) currentChar;
+    // System.out.println(ascii);
+    // constructLine();
+    // print(currentSpelling.toString());
+
+    /*
+    currentSpelling.append('/');
+    currentSpelling.append('/');
+    
+    if (currentSpelling.toString().equals("//")){
+        print("something2");
+    }
+   */
+   
+   /*
+    if (currentChar == '/'){
+        System.out.println("Something");   
+        print(currentChar);
+        skipLine();
+    }
+    
+    if (currentChar == '\n'){
+        print("NEWLINE!");
+    }
+   */
+    
+    
+
+   // You must record the position of the current token somehow
+   /*
+   while (currentChar != ' '){
+      currentSpelling.append(currentChar);
+      currentChar = sourceFile.getNextChar();
+   }
+   System.out.println(currentSpelling);
+   */      
+
+   tok = new Token(kind, currentSpelling.toString(), sourcePos);
+
+   // * do not remove these three lines
+   if (debug)
+     System.out.println(tok);
+   return tok;
+   }
+
+    public void print(String string){
+        System.out.println(string);
+    }
+    
+    public void print(char c){
+        System.out.println(c);
+    }
+    
+    public void print(int i){
+        System.out.println(i);
+    }
+
+    public void skipLine(){
+        // Something like "while currentChar does not equal \n
+        // get next char.
+        while (currentChar != '\n'){
+            currentChar = sourceFile.getNextChar();
+            columnCounter++;                        // This is not really needed.
+        }
+        lineCounter++;
+        columnCounter = 0;
+    }
+    
+    public void constructWord(){
+        while (currentChar != ' '){
+            currentSpelling.append(currentChar);
+            currentChar = sourceFile.getNextChar();
+            columnCounter++;
+        }
+    }
+   
+    public void constructLine(){
+         while (currentChar != '\n'){
+            if ((int) currentChar == 0)
+               break;
+            currentSpelling.append(currentChar);
+            currentChar = sourceFile.getNextChar();
+            columnCounter++;                        // This is not really needed.
+        }
+        lineCounter++;
+        columnCounter = 0;
+    } 
+    
+    
+    public String[] breakLineToTokens(){
+         String str = currentSpelling.toString();
+         String[] splited = str.split("\\s+");
+         return splited;
+    }
+    
+    // Stack overflow: https://stackoverflow.com/questions/7899525/how-to-split-a-string-by-space
+    public void tempBreakLineToTokens(){
+         String str = "Hello I'm your String";
+         String[] splited = str.split("\\s+");
+         for (String s : splited){
+            System.out.println(s);
+         }
+    }
+    
+    
+    public boolean stringContainsOnlyNumbers(String s){
+         for (int i = 0; i < s.length(); i++){
+            char c = s.charAt(i);
+            int ascii = (int) c;
+            if (ascii < 48 || ascii > 57){
+               return false;
+            }
+         }
+         return true;
+    }
+    
+    public boolean stringMatchesInt(String s){
+         return s.equals("int");
+    }
+    
+    public boolean stringMatchesSlashSlash(String s){
+         return s.equals("//");
+    }
+
+}

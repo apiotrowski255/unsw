@@ -1,0 +1,38 @@
+#!/bin/sh
+input=`ls -l`
+echo $input
+
+size=`echo $input | cut -d" " -f7`
+name=`echo $input | cut -d" " -f11`
+size2=`echo $input | cut -d" " -f16`
+`
+last=`echo $input | tail`
+
+i=7
+j=11
+while test $i -lt 100
+do
+	echo $input | cut -d" " -f$i
+	echo $input | cut -d" " -f$j
+	if test "$i" -lt 0 2>/dev/null
+	then
+		i=101
+	fi
+	i=$(($i + 9))
+	j=$(($j + 9))
+done
+
+
+
+
+echo $size
+echo $name
+echo $size2
+echo $name2
+
+echo -n "Small files:"
+#echo small files 
+echo -n "Medium-sized files:"
+#echo medium files
+echo -n "Large files:"
+#echo large files

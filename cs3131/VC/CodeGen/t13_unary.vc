@@ -1,0 +1,13 @@
+boolean y() {
+   return true;
+}
+
+int main() {
+   int x = 0;
+   if (!y()) {
+      x = 3;
+   } else {
+      x = 5;
+   }
+   putIntLn(x);
+}

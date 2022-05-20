@@ -1,0 +1,9 @@
+int main() {
+   int a[10];
+   int i = 1;
+   int j = 2;
+   
+   a[i+j] = j+10;
+   putIntLn(a[i+j]);
+   return 0;
+}

@@ -1,0 +1,11 @@
+// This should not print false!
+
+boolean f() {
+   putBoolLn(false);
+   return false;
+}
+
+int main() {
+   false && f();
+   return 0;
+}

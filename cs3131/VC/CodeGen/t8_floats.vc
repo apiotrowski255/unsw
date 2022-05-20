@@ -1,0 +1,6 @@
+int main() {
+   float i = 5.1;
+   float j = 5.3432345;
+   float k = i + j;
+   putFloatLn(i);
+}

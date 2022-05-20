@@ -1,0 +1,4 @@
+void A(){
+   int i;
+   break;
+}

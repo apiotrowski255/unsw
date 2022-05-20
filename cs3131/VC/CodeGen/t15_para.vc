@@ -1,0 +1,12 @@
+int test(int a) {
+   int b;
+   b = a + 2;
+   return b;
+}
+
+int main() {
+   int a;
+   a = test(3);
+   putIntLn(test(3));
+   return 0;
+}

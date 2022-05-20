@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+use warnings;
+
+$course = $ARGV[0];
+
+print $course, "\n";
+
+$web = "http://www.handbook.unsw.edu.au/postgraduate/courses/2017/";
+$html = ".html";
+
+$website = $we+ $course $html;
+print "website to enter is ", $website, "\n"; 

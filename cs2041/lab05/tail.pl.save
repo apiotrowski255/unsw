@@ -1,0 +1,58 @@
+#!/usr/bin/perl
+
+use warnings;
+
+$size = @ARGV;
+$N = 10;
+$NSaved = 10;
+$i = 0;
+$NumLinesInFile = 0;
+$diff = 0;
+
+
+#if ($ARGV[0] =~ /^-\d+$/ && @ARGV gt 0){
+#	$N = -$ARGV[0];
+#	$NSaved = $N;
+#	$i++;
+#	shift $ARGV;
+#}
+
+
+if ($size == 0){
+	#read from stdin
+} else {
+	#check if we need to modify N
+	if ($ARGV[0] =~ /^-\d+$/){
+		$N = -$ARGV[0];
+		$NSaved = $N;
+		$i++;		
+	}
+
+	while ($i < $size){
+	my $file = $ARGV[$i];
+	open my $info, $file or die "Could not open $file: $!";
+
+	while( my $line = <$info>) {
+		$NumLinesInFile++;
+				}
+
+		$diff = $NumLinesInFile - $N;
+
+		close $info;
+	
+		open $info, $file or die "Could not open $file: $!";
+	
+		while( my $line = <$info>){
+			if($diff > 0){
+				$diff--;
+			} else {
+				print $line;
+			}
+		} 
+
+		close $info;
+	$i++;
+	}
+}
+
+

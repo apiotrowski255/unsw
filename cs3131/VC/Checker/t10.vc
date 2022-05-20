@@ -1,0 +1,13 @@
+int i;
+boolean b;
+int f (int x) {
+   return x * 5 + 2;
+}
+int main() {
+   int i[3];
+   float k = 1.5;
+   i[0] = f(1);
+   i[1] = f(i[0]);
+   i[2] = (i[0] + i[1]) * k;
+   return 2;
+}

@@ -1,0 +1,8 @@
+int main() {
+   int i = 0;
+   while (i < 100.5) {
+      putIntLn(i);
+      i = i + 1;
+   }
+   putIntLn(i);
+}

@@ -1,0 +1,13 @@
+int main() {
+   int i = 3;
+   int r = 0;
+   int k = 9;
+   int w = 4;
+   int a = 1;
+   int b = 2;
+   int j = 4;
+   
+   i = j + b + 10;
+   putIntLn(i);
+   return 0;
+}

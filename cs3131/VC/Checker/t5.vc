@@ -1,0 +1,13 @@
+int f(int x, int y) { 
+   return x + y;   
+}
+
+int v(float x, float x, float x) {
+   return x;
+}
+
+int main() {
+   int y[5];
+   int x[3] = {1, f(1,2), 3};
+   return x[y[1]];
+}

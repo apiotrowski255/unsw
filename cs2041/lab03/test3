@@ -1,0 +1,13 @@
+if test $# = 0
+then
+	echo "Usage $0: <program> 1>&2
+	exit 1
+fi
+
+for program in "$@"
+do 
+	program_found=''
+	for directory in echo "$PAtH" | tr ':' ' '`
+	do
+		f="$diectory/$program"
+		if 

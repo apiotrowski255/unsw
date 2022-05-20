@@ -1,0 +1,218 @@
+/*
+ *
+ *	Scanner.java                        
+ *
+ */
+
+package VC.Scanner;
+
+import VC.ErrorReporter;
+
+public final class Scanner { 
+
+  private SourceFile sourceFile;
+  private boolean debug;
+
+  private ErrorReporter errorReporter;
+  private StringBuffer currentSpelling;
+  private char currentChar;
+  private SourcePosition sourcePos;
+  
+  private int lineNumber, columnNumber, currentCharNumber, EndStringNumber;
+
+   public enum State {
+      scanning, FindCommentEnd
+   }
+
+// =========================================================
+
+  public Scanner(SourceFile source, ErrorReporter reporter) {
+    sourceFile = source;
+    errorReporter = reporter;
+    currentChar = sourceFile.getNextChar();
+    debug = false;
+
+    // you may initialise your counters for line and column numbers here
+    
+    lineNumber = 1;
+    columnNumber = 1;
+    currentCharNumber = 1;
+    EndStringNumber = 1;
+  }
+
+  public void enableDebugging() {
+    debug = true;
+  }
+
+  // accept gets the next character from the source program.
+
+  private void accept() {
+      if(currentChar == '\n'){
+         lineNumber++;
+         columnNumber = 1;
+      } else {
+         columnNumber++;
+      }
+    currentChar = sourceFile.getNextChar();
+
+  // you may save the lexeme of the current token incrementally here
+  // you may also increment your line and column counters here
+
+
+  }
+
+  // inspectChar returns the n-th character after currentChar
+  // in the input stream. 
+  //
+  // If there are fewer than nthChar characters between currentChar 
+  // and the end of file marker, SourceFile.eof is returned.
+  // 
+  // Both currentChar and the current position in the input stream
+  // are *not* changed. Therefore, a subsequent call to accept()
+  // will always return the next char after currentChar.
+
+  private char inspectChar(int nthChar) {
+    return sourceFile.inspectChar(nthChar);
+  }
+
+  private int nextToken() {
+  // Tokens: separators, operators, literals, identifiers and keyworods
+       
+    switch (currentChar) {
+       // separators 
+    case '(':
+	      accept();
+	      return Token.LPAREN;
+	 case ')':
+	      accept();
+	      return Token.RPAREN;
+    case '.':
+        //  attempting to recognise a float
+
+      case '"':
+         System.out.println("There is a string");
+         return Token.STRINGLITERAL;
+    case '|':	
+       	accept();
+      	if (currentChar == '|') {
+            accept();
+	         return Token.OROR;
+      	} else {
+      		columnNumber--;
+	         return Token.ERROR;
+        }
+      case '&':
+         accept();
+         if (currentChar == '&'){
+            accept();
+            return Token.ANDAND;
+         } else {
+            columnNumber--;
+            return Token.ERROR;
+         }
+      case 'i':
+         if (inspectChar(1) == 'n' && inspectChar(2) == 't' && inspectChar(3) == ' '){
+            sourcePos.charStart = columnNumber;
+            sourcePos.charFinish = columnNumber+2;
+            currentSpelling.append(inspectChar(1));
+            currentSpelling.append(inspectChar(2));
+            accept();accept();accept();accept();
+            //System.out.println(columnNumber);
+            return Token.INT;
+         } else {
+            // could be a string literal
+            sourcePos.charStart = columnNumber;
+            sourcePos.charFinish = columnNumber;
+            accept();
+            return Token.ERROR;
+         }
+      case '=':
+        accept();
+        if (currentChar == '='){
+            return Token.EQEQ;
+        } else {
+            return Token.EQ;
+        }
+      case ';':
+         sourcePos.charStart = columnNumber;
+         sourcePos.charFinish = columnNumber;
+         accept();
+         return Token.SEMICOLON;
+    // ....
+    case SourceFile.eof:	
+         sourcePos.charStart = columnNumber;
+         sourcePos.charFinish = columnNumber;
+	      currentSpelling.append(Token.spell(Token.EOF));
+	      return Token.EOF;
+    default:
+	      break;
+    }
+
+    accept(); 
+    return Token.ERROR;
+  }
+
+  void skipSpaceAndComments() {
+      if (currentChar == '/' && inspectChar(1) == '/'){
+         // This is a comment and we ignore everything until the next line.
+         System.out.println("seeking til the end of the line");
+         while (currentChar != '\n'){
+            accept();
+         }
+         // At this point currentChar should be \n, so we need to increment by one more to begin the new line.
+         accept();
+         
+         // We will need to check again if currentChar == /
+         skipSpaceAndComments();
+         
+      } else if (currentChar == '\n'){
+          accept();
+          skipSpaceAndComments();
+      } else {
+         return;
+      }
+  }
+
+  public Token getToken() {
+    Token tok;
+    int kind;
+
+    // skip white space and comments
+
+   skipSpaceAndComments();
+   //System.out.println(columnNumber);
+   currentSpelling = new StringBuffer("");
+
+   sourcePos = new SourcePosition();
+
+   // You must record the position of the current token somehow
+
+   /*
+   System.out.println("lineNumber is : " + lineNumber);
+   System.out.println("columnNumber is : " + columnNumber);
+   System.out.println("currentCharNumber is : " + currentCharNumber);
+   System.out.println("currentChar is :" + currentChar);
+   System.out.println("char is :" + sourceFile.inspectChar(currentCharNumber));
+   */
+   aouexwPos.charStart = columnNumber;
+   currentSpelling.append(currentChar);
+
+   kind = nextToken();
+
+   sourcePos.lineStart = lineNumber;
+   sourcePos.lineFinish = lineNumber;
+   /*
+   sourcePos.charStart = columnNumber;
+   sourcePos.charFinish = columnNumber;
+   */
+
+
+   tok = new Token(kind, currentSpelling.toString(), sourcePos);
+
+   // * do not remove these three lines
+   if (debug)
+     System.out.println(tok);
+   return tok;
+   }
+
+}
